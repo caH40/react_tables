@@ -1,0 +1,59 @@
+.myTable {
+	color: var(--tg-theme-text-color);
+	width: 100%;
+	border: none;
+	margin-bottom: 20px;
+}
+.myTable caption {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	text-align-last: left;
+}
+.myTable thead th {
+	font-family: 'Roboto', sans-serif;
+	text-align: left;
+	border: none;
+	padding: 5px 5px;
+	background: var(--tg-theme-secondary-bg-color);
+	font-size: 14px;
+}
+
+.myTable tbody td {
+	text-align: left;
+	border: none;
+	padding: 5px 5px;
+	font-size: 14px;
+	vertical-align: top;
+}
+
+.myTable tbody tr:nth-child(even) {
+	background: var(--tg-theme-secondary-bg-color);
+	transition: all 0.2s;
+}
+
+.myTable tbody tr:hover {
+	background-color: var(--tg-theme-button-color);
+	color: var(--tg-theme-button-text-color);
+	transition: all 0.2s;
+}
+
+.myTable tbody tr:active {
+	background-color: var(--tg-theme-button-color);
+	color: var(--tg-theme-button-text-color);
+	transition: all 0.2s;
+}
+
+.rider {
+	display: flex;
+	align-items: center;
+}
+.logo {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	margin-right: 5px;
+}
+
+.thousandthsSecond {
+	font-size: 10px;
+}
