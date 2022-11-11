@@ -1,17 +1,19 @@
 import React from 'react';
 
 import classes from '../Table.module.css';
+import avatar from '../../../images/avatar.svg';
 
 const TableBody = ({ results, category }) => {
 	return (
 		<tbody>
 			{results.map(result => {
+				const riderLogo = result.imageSrc ? result.imageSrc : avatar;
+
 				return (
 					<tr key={result._id}>
 						{category === 'T' ? <td>{result.placeAbsolute}</td> : <td>{result.placeCategory}</td>}
 						<td className={classes.rider}>
-							<img className={classes.logo} src={result.imageSrc} alt="Ph" />{' '}
-							<span>{result.name}</span>
+							<img className={classes.logo} src={riderLogo} alt="Ph" /> <span>{result.name}</span>
 						</td>
 
 						<td>
