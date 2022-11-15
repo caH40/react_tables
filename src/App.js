@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import './App.css';
 import Home from './Components/Home';
+import SettingsNotice from './Components/SettingsNotice';
 import TableStage from './Components/UI/Tables/Stage/TableStage';
 
 import { useTelegram } from './hooks/useTelegram';
@@ -20,6 +21,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="*" element={<Page404 />} />
+				<Route path="settings/notice/:telegramId" element={<SettingsNotice />} />
 				<Route path="results/stage/:params" element={<TableStage />} />
 			</Routes>
 		</div>
