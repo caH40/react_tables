@@ -8,6 +8,7 @@ import TableStage from './Components/UI/Tables/Stage/TableStage';
 
 import { useTelegram } from './hooks/useTelegram';
 import Page404 from './Pages/Page404';
+import EditStage from './Pages/StageEdit';
 
 function App() {
 	const { tg } = useTelegram();
@@ -23,6 +24,7 @@ function App() {
 				<Route path="*" element={<Page404 />} />
 				<Route path="settings/notice/:telegramId" element={<SettingsNotice />} />
 				<Route path="results/stage/:params" element={<TableStage />} />
+				<Route path="edit/stage/:params" element={<EditStage />} />
 			</Routes>
 		</div>
 	);
