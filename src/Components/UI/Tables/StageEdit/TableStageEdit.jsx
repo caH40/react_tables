@@ -10,7 +10,8 @@ import { titlesStageEdit } from '../titles';
 
 const TableStageEdit = () => {
 	const [results, setResults] = useState([]);
-
+	const [popup, setPopup] = useState();
+	console.log('==================new render===================');
 	let { params } = useParams();
 
 	useEffect(() => {
@@ -19,6 +20,7 @@ const TableStageEdit = () => {
 
 	return (
 		<div>
+			<h2>{popup}</h2>
 			<table className={classes.myTable}>
 				<caption>{results[0]?.title}</caption>
 				<thead>
@@ -28,7 +30,7 @@ const TableStageEdit = () => {
 						})}
 					</tr>
 				</thead>
-				<TableStageEditBody results={results} />
+				<TableStageEditBody setPopup={setPopup} results={results} setResults={setResults} />
 			</table>
 			{results.length === 0 ? <div style={{ textAlign: 'center' }}>Loading...</div> : ''}
 		</div>

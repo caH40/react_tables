@@ -12,12 +12,15 @@ export const thTitles = [
 ];
 export const titlesStageEdit = [
 	'#',
-	'кат',
-	'Райдер',
-	'Время',
-	'Ватты',
-	'Вт.кг',
-	'Пульс',
-	'Вес',
-	'Рост',
+	'Category',
+	'Watt',
+	'WattPerKg',
+	'Rider',
+	'Sprint1',
+	'Sprint2',
+	'Mountain1',
+	'Time',
+	'Pulse',
+	'Weight',
+	'Height',
 ];

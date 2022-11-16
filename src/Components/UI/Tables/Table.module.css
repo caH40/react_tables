@@ -42,6 +42,9 @@
 	color: var(--tg-theme-button-text-color);
 	transition: all 0.2s;
 }
+.category {
+	display: flex;
+}
 
 .rider {
 	display: flex;
