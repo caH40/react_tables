@@ -12,7 +12,7 @@ const TableBody = ({ results, category }) => {
 				return (
 					<tr key={result._id}>
 						{category === 'T' ? <td>{result.placeAbsolute}</td> : <td>{result.placeCategory}</td>}
-						<td>{result.category}</td>
+						{/* <td>{result.category}</td> */}
 						<td className={classes.rider}>
 							<img className={classes.logo} src={riderLogo} alt="Ph" /> <span>{result.name}</span>
 						</td>
