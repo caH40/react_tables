@@ -1,0 +1,47 @@
+.checkbox {
+	position: relative;
+	margin-bottom: 30px;
+}
+.input {
+	width: 0;
+	height: 0;
+	opacity: 0;
+}
+
+.switch_right {
+	position: absolute;
+	display: inline-block;
+	width: 35px;
+	height: 25px;
+	background: #b6c4bb;
+	box-shadow: inset 2px 2px 7px 1px rgba(0, 0, 0, 0.25);
+	border-radius: 0px 15px 15px 0px;
+	right: 0;
+	transition: 0.4s;
+}
+
+.switch_left {
+	position: absolute;
+	display: inline-block;
+	width: 35px;
+	height: 25px;
+	background: var(--tg-theme-button-color);
+	box-shadow: inset 2px 2px 7px 1px rgba(0, 0, 0, 0.25);
+	border-radius: 15px 0px 0px 15px;
+	right: 35px;
+	transition: 0.4s;
+}
+.label {
+	font-size: 22px;
+	cursor: pointer;
+}
+
+.input:checked + .switch_left {
+	background: #b6c4bb;
+	transition: 0.4s;
+}
+
+.input:checked + .switch_left + .switch_right {
+	background: var(--tg-theme-button-color);
+	transition: 0.4s;
+}

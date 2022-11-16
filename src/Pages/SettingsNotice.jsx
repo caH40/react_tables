@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getSettings, postSettings } from '../api/settings';
-import Checkbox from './UI/Checkbox/Checkbox';
+import Checkbox from '../Components/UI/Checkbox/Checkbox';
 
 const SettingsNotice = () => {
 	const [box, setBox] = useState({ news: true, newRace: true, botInfo: true });

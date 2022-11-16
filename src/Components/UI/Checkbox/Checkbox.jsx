@@ -1,19 +1,20 @@
 import React from 'react';
+import classes from './Checkbox.module.css';
 
 const Checkbox = ({ label, settings, id, updateSettings }) => {
 	return (
-		<div className="checkbox">
-			<label className="checkbox__label" id={id}>
+		<div className={classes.checkbox}>
+			<label className="classes.label" id={id}>
 				{label}
 				<input
-					className="checkbox__input"
+					className={classes.input}
 					type={'checkbox'}
 					checked={!settings[id]}
 					onChange={updateSettings}
 					id={id}
 				/>
-				<span className="checkbox__switch-left" />
-				<span className="checkbox__switch-right" />
+				<span className={classes.switch_left} />
+				<span className={classes.switch_right} />
 			</label>
 		</div>
 	);
