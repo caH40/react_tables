@@ -3,6 +3,7 @@ import React from 'react';
 import classes from '../Table.module.css';
 import avatar from '../../../images/avatar.svg';
 import SelectCategory from '../../SelectCategory/SelectCategory';
+import SelectSprintPoints from '../../SelectSprintPoints/SelectSprintPoints';
 
 const TableStageEditBody = ({ results, setPopup, changeCategory, setResults }) => {
 	return (
@@ -23,6 +24,12 @@ const TableStageEditBody = ({ results, setPopup, changeCategory, setResults }) =
 						}
 					</div>
 				);
+				const sprintFirst = (
+					<div>
+						<SelectSprintPoints />
+					</div>
+				);
+
 				const riderLogo = result.imageSrc ? result.imageSrc : avatar;
 				const rider = (
 					<div className={classes.rider}>
@@ -44,7 +51,7 @@ const TableStageEditBody = ({ results, setPopup, changeCategory, setResults }) =
 						<td>{result.watt}</td>
 						<td>{result.wattPerKg}</td>
 						<td>{rider}</td>
-						<td>Place</td>
+						<td>{sprintFirst}</td>
 						<td>Place</td>
 						<td>Place</td>
 						<td>{time}</td>

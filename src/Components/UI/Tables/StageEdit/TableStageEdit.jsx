@@ -16,26 +16,23 @@ const TableStageEdit = () => {
 	const { params } = useParams();
 	const { tg } = useTelegram();
 
-	console.log('==================new render===================');
-
 	useEffect(() => {
 		getResults(params).then(data => setResults(data));
 	}, []);
 
-	useMemo(() => {
-		//при нажатии на Х callback не срабатывает если не указать id
-		if (popup)
-			tg.showPopup(
-				{ title: 'Выполнена операция', message: popup, buttons: [{ type: 'close', id: 1 }] },
-				() => {
-					setPopup('');
-				}
-			);
-	}, [popup]);
+	// useMemo(() => {
+	// 	if (popup)
+	// 		tg.showPopup(
+	// 			{ title: 'Выполнена операция', message: popup, buttons: [{ type: 'close', id: 1 }] },
+	// 			() => {
+	// 				setPopup('');
+	// 			}
+	// 		);
+	// }, [popup, tg]);
 
 	return (
 		<div>
-			{/* {popup ? <p>{popup}</p> : ''} */}
+			{popup ? <div>{popup}</div> : ''}
 			<table className={classes.myTable}>
 				<caption>{results[0]?.title}</caption>
 				<thead>
