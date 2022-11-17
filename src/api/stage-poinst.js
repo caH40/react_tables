@@ -9,5 +9,6 @@ export async function postSprintPoints(nameElement, name, place, resultId) {
 			'Content-type': 'application/json',
 		}
 	);
+
 	return response.data.message;
 }

@@ -12,7 +12,6 @@ import { useTelegram } from '../../../../hooks/useTelegram';
 const TableStageEdit = () => {
 	const [results, setResults] = useState([]);
 	const [popup, setPopup] = useState('');
-	// const [selectSpr, setSelectSpr] = useState(sprintPoints);
 
 	const { params } = useParams();
 	const { tg } = useTelegram();
@@ -43,7 +42,7 @@ const TableStageEdit = () => {
 
 	return (
 		<div>
-			{popup ? <div>{popup}</div> : ''}
+			{/* {popup ? <div>{popup}</div> : ''} */}
 			<table className={classes.myTable}>
 				<caption>{results[0]?.title}</caption>
 				<thead>

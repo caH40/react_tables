@@ -16,8 +16,6 @@ const SelectMountainPoints = ({ name, index, result, results, setResults, setPop
 		);
 	};
 
-	// console.log(result[0]);
-
 	return (
 		<select onChange={changePlace} size="1" defaultValue={result.pointsMountain[index].place}>
 			{mountainTable.map(elm => {
