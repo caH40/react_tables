@@ -1,0 +1,26 @@
+import React from 'react';
+import { mountainTable } from '../../../Utils/points';
+
+const SelectMountainPoints = ({ name, index, result, results, setResults }) => {
+	const changePlace = e => {
+		const tempResults = [...results];
+
+		tempResults.forEach(elm => {
+			if (elm.zwiftRiderId === result.zwiftRiderId)
+				result.pointsMountain[index].place = e.target.value;
+		});
+		setResults(tempResults);
+	};
+
+	// console.log(result[0]);
+
+	return (
+		<select onChange={changePlace} size="1" defaultValue={result.pointsMountain[index].place}>
+			{mountainTable.map(elm => {
+				return <option value={elm.place} label={elm.place} key={elm.place} />;
+			})}
+		</select>
+	);
+};
+
+export default SelectMountainPoints;

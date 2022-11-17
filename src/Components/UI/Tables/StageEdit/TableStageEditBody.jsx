@@ -3,7 +3,8 @@ import React from 'react';
 import classes from '../Table.module.css';
 import avatar from '../../../images/avatar.svg';
 import SelectCategory from '../../SelectCategory/SelectCategory';
-import SelectSprintPoints from '../../SelectSprintPoints/SelectSprintPoints';
+import SelectSprintPoints from '../../SelectPoints/SelectSprintPoints';
+import SelectMountainPoints from '../../SelectPoints/SelectMountainPoints';
 
 const TableStageEditBody = ({ results, setPopup, changeCategory, setResults }) => {
 	return (
@@ -20,15 +21,33 @@ const TableStageEditBody = ({ results, setPopup, changeCategory, setResults }) =
 								zwiftId={result.zwiftRiderId}
 								stageId={result.stageId}
 								defaultValue={result.category}
+								key={result._id}
 							/>
 						}
 					</div>
 				);
-				const sprintFirst = (
-					<div>
-						<SelectSprintPoints />
-					</div>
-				);
+
+				const selectSprint = result.quantitySprints.map((elm, index) => (
+					<td key={elm}>
+						<SelectSprintPoints
+							index={index}
+							result={result}
+							results={results}
+							setResults={setResults}
+						/>
+					</td>
+				));
+				const selectMountain = result.quantityMountains.map((elm, index) => (
+					<td key={elm}>
+						<SelectMountainPoints
+							index={index}
+							result={result}
+							results={results}
+							setResults={setResults}
+							key={elm}
+						/>
+					</td>
+				));
 
 				const riderLogo = result.imageSrc ? result.imageSrc : avatar;
 				const rider = (
@@ -51,9 +70,8 @@ const TableStageEditBody = ({ results, setPopup, changeCategory, setResults }) =
 						<td>{result.watt}</td>
 						<td>{result.wattPerKg}</td>
 						<td>{rider}</td>
-						<td>{sprintFirst}</td>
-						<td>Place</td>
-						<td>Place</td>
+						{selectSprint}
+						{selectMountain}
 						<td>{time}</td>
 						<td>{result.avgHeartRate}</td>
 						<td>{result.weightInGrams}</td>

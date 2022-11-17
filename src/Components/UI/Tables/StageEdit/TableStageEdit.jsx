@@ -12,12 +12,23 @@ import { useTelegram } from '../../../../hooks/useTelegram';
 const TableStageEdit = () => {
 	const [results, setResults] = useState([]);
 	const [popup, setPopup] = useState('');
+	// const [selectSpr, setSelectSpr] = useState(sprintPoints);
 
 	const { params } = useParams();
 	const { tg } = useTelegram();
 
 	useEffect(() => {
-		getResults(params).then(data => setResults(data));
+		getResults(params).then(data => {
+			const quantitySprints = data[0]?.pointsSprint.map(elm => 'sprint' + elm.sprint);
+			const quantityMountains = data[0]?.pointsMountain.map(elm => 'mountain' + elm.mountain);
+			titlesStageEdit.splice(5, 0, ...quantitySprints, ...quantityMountains);
+
+			data.forEach(result => {
+				result.quantitySprints = quantitySprints;
+				result.quantityMountains = quantityMountains;
+			});
+			setResults(data);
+		});
 	}, []);
 
 	// useMemo(() => {
