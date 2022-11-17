@@ -31,15 +31,15 @@ const TableStageEdit = () => {
 		});
 	}, []);
 
-	// useMemo(() => {
-	// 	if (popup)
-	// 		tg.showPopup(
-	// 			{ title: 'Выполнена операция', message: popup, buttons: [{ type: 'close', id: 1 }] },
-	// 			() => {
-	// 				setPopup('');
-	// 			}
-	// 		);
-	// }, [popup, tg]);
+	useMemo(() => {
+		if (popup)
+			tg.showPopup(
+				{ title: 'Выполнена операция', message: popup, buttons: [{ type: 'close', id: 1 }] },
+				() => {
+					setPopup('');
+				}
+			);
+	}, [popup, tg]);
 
 	return (
 		<div>

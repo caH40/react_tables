@@ -1,7 +1,8 @@
 import React from 'react';
+import { postSprintPoints } from '../../../api/stage-poinst';
 import { sprintTable } from '../../../Utils/points';
 
-const SelectSprintPoints = ({ name, index, result, results, setResults }) => {
+const SelectSprintPoints = ({ name, index, result, results, setResults, setPopup }) => {
 	const changePlace = e => {
 		const tempResults = [...results];
 
@@ -10,9 +11,10 @@ const SelectSprintPoints = ({ name, index, result, results, setResults }) => {
 				result.pointsSprint[index].place = e.target.value;
 		});
 		setResults(tempResults);
+		postSprintPoints('pointsSprint', name, e.target.value, result._id).then(message =>
+			setPopup(message)
+		);
 	};
-
-	// console.log(result);
 
 	return (
 		<select onChange={changePlace} size="1" defaultValue={result.pointsSprint[index].place}>

@@ -30,21 +30,24 @@ const TableStageEditBody = ({ results, setPopup, changeCategory, setResults }) =
 				const selectSprint = result.quantitySprints.map((elm, index) => (
 					<td key={elm}>
 						<SelectSprintPoints
+							name={elm}
 							index={index}
 							result={result}
 							results={results}
 							setResults={setResults}
+							setPopup={setPopup}
 						/>
 					</td>
 				));
 				const selectMountain = result.quantityMountains.map((elm, index) => (
 					<td key={elm}>
 						<SelectMountainPoints
+							name={elm}
 							index={index}
 							result={result}
 							results={results}
 							setResults={setResults}
-							key={elm}
+							setPopup={setPopup}
 						/>
 					</td>
 				));

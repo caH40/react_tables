@@ -1,7 +1,8 @@
 import React from 'react';
+import { postSprintPoints } from '../../../api/stage-poinst';
 import { mountainTable } from '../../../Utils/points';
 
-const SelectMountainPoints = ({ name, index, result, results, setResults }) => {
+const SelectMountainPoints = ({ name, index, result, results, setResults, setPopup }) => {
 	const changePlace = e => {
 		const tempResults = [...results];
 
@@ -10,6 +11,9 @@ const SelectMountainPoints = ({ name, index, result, results, setResults }) => {
 				result.pointsMountain[index].place = e.target.value;
 		});
 		setResults(tempResults);
+		postSprintPoints('pointsMountain', name, e.target.value, result._id).then(message =>
+			setPopup(message)
+		);
 	};
 
 	// console.log(result[0]);
