@@ -1,6 +1,6 @@
 import React from 'react';
 
-import TableStageEdit from '../Components/UI/Tables/StageEdit/TableStageEdit';
+import TableStageEdit from '../Components/Tables/StageEdit/TableStageEdit';
 
 const EditStage = () => {
 	return (

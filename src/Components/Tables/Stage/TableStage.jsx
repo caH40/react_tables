@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { getResults } from '../../../../api/getResults';
+import { getResults } from '../../../api/getResults';
 import TableBody from './TableBody';
 import classes from '../Table.module.css';
 import { thTitles } from '../titles';

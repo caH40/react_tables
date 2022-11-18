@@ -3,11 +3,11 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { getResults } from '../../../../api/getResults';
+import { getResults } from '../../../api/getResults';
 import TableStageEditBody from './TableStageEditBody';
 import classes from '../Table.module.css';
 import { titlesStageEdit } from '../titles';
-import { useTelegram } from '../../../../hooks/useTelegram';
+import { useTelegram } from '../../../hooks/useTelegram';
 
 const TableStageEdit = () => {
 	const [results, setResults] = useState([]);

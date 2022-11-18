@@ -1,10 +1,11 @@
 import React from 'react';
 
 import classes from '../Table.module.css';
-import avatar from '../../../images/avatar.svg';
-import SelectCategory from '../../SelectCategory/SelectCategory';
-import SelectSprintPoints from '../../SelectPoints/SelectSprintPoints';
-import SelectMountainPoints from '../../SelectPoints/SelectMountainPoints';
+import avatar from '../../images/avatar.svg';
+
+import SelectSprintPoints from '../../UI/SelectPoints/SelectSprintPoints';
+import SelectMountainPoints from '../../UI/SelectPoints/SelectMountainPoints';
+import SelectCategory from '../../UI/SelectCategory/SelectCategory';
 
 const TableStageEditBody = ({ results, setPopup, changeCategory, setResults }) => {
 	return (

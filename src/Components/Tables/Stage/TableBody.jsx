@@ -1,7 +1,7 @@
 import React from 'react';
 
 import classes from '../Table.module.css';
-import avatar from '../../../images/avatar.svg';
+import avatar from '../../images/avatar.svg';
 
 const TableBody = ({ results, category }) => {
 	return (
