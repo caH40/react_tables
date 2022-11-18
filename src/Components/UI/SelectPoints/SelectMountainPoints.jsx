@@ -17,7 +17,13 @@ const SelectMountainPoints = ({ name, index, result, results, setResults, setPop
 	};
 
 	return (
-		<select onChange={changePlace} size="1" defaultValue={result.pointsMountain[index].place}>
+		<select
+			style={{
+				background: result.pointsMountain[index].place === 'none' ? '#ffffff' : '#dc4119',
+			}}
+			onChange={changePlace}
+			size="1"
+			defaultValue={result.pointsMountain[index].place}>
 			{mountainTable.map(elm => {
 				return <option value={elm.place} label={elm.place} key={elm.place} />;
 			})}

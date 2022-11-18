@@ -17,7 +17,13 @@ const SelectSprintPoints = ({ name, index, result, results, setResults, setPopup
 	};
 
 	return (
-		<select onChange={changePlace} size="1" defaultValue={result.pointsSprint[index].place}>
+		<select
+			style={{
+				background: result.pointsSprint[index].place === 'none' ? '#ffffff' : '#58c34e',
+			}}
+			onChange={changePlace}
+			size="1"
+			defaultValue={result.pointsSprint[index].place}>
 			{sprintTable.map(elm => {
 				return <option value={elm.place} label={elm.place} key={elm.place} />;
 			})}

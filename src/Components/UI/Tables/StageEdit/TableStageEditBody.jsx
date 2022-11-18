@@ -51,7 +51,28 @@ const TableStageEditBody = ({ results, setPopup, changeCategory, setResults }) =
 						/>
 					</td>
 				));
-
+				const watt = String(result.watt).includes('max') ? (
+					<span className="maxRed">
+						{result.watt.replace('max', '')}
+						<small>w</small>
+					</span>
+				) : (
+					<span>
+						{result.watt}
+						<small>w</small>
+					</span>
+				);
+				const wattPerKg = String(result.wattPerKg).includes('max') ? (
+					<span className="maxRed">
+						{result.wattPerKg.replace('max', '')}
+						<small>w/kg</small>
+					</span>
+				) : (
+					<span>
+						{result.wattPerKg}
+						<small>w/kg</small>
+					</span>
+				);
 				const riderLogo = result.imageSrc ? result.imageSrc : avatar;
 				const rider = (
 					<div className={classes.rider}>
@@ -66,19 +87,48 @@ const TableStageEditBody = ({ results, setPopup, changeCategory, setResults }) =
 							</span>,
 					  ]
 					: result.time;
+				const avgHeartRate = result.avgHeartRate ? (
+					<span>
+						{result.avgHeartRate}
+						<small>bpm</small>
+					</span>
+				) : (
+					''
+				);
+				const weightInGrams = result.weightInGrams ? (
+					<span>
+						{result.weightInGrams}
+						<small>kg</small>
+					</span>
+				) : (
+					''
+				);
+				const heightInCentimeters = result.heightInCentimeters ? (
+					<span>
+						{result.heightInCentimeters}
+						<small>cm</small>
+					</span>
+				) : (
+					''
+				);
+				// 	<td>
+				// 	<span dangerouslySetInnerHTML={{ __html: result.wattPerKg }}></span>
+				// 	<small>w/kg</small>
+				// </td>
+
 				return (
 					<tr key={result._id}>
 						<td>{result.placeAbsolute}</td>
 						<td>{category}</td>
-						<td>{result.watt}</td>
-						<td>{result.wattPerKg}</td>
+						<td>{watt}</td>
+						<td>{wattPerKg}</td>
 						<td>{rider}</td>
 						{selectSprint}
 						{selectMountain}
 						<td>{time}</td>
-						<td>{result.avgHeartRate}</td>
-						<td>{result.weightInGrams}</td>
-						<td>{result.heightInCentimeters}</td>
+						<td>{avgHeartRate}</td>
+						<td>{weightInGrams}</td>
+						<td>{heightInCentimeters}</td>
 					</tr>
 				);
 			})}
