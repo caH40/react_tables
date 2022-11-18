@@ -63,3 +63,13 @@
 .gap {
 	font-size: 12px;
 }
+.totalCorrect {
+	font-weight: bold;
+}
+.totalWrong {
+	color: gray;
+}
+.pointsWrong {
+	font-size: 12px;
+	color: gray;
+}

@@ -22,7 +22,6 @@ const TableStage = () => {
 		<div>
 			<table className={classes.myTable}>
 				<caption>{results[0]?.title}</caption>
-
 				<thead>
 					<tr>
 						{thTitles.map(thTitle => {

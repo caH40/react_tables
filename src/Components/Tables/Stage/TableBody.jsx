@@ -1,6 +1,5 @@
 import React from 'react';
 
-import classes from '../Table.module.css';
 import { tdCategory, tdGap, tdRider, tdTime, valueMax } from '../../../Utils/table';
 
 const TableBody = ({ results, category }) => {
