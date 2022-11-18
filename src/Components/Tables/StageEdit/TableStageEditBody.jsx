@@ -1,11 +1,10 @@
 import React from 'react';
 
 import classes from '../Table.module.css';
-import avatar from '../../images/avatar.svg';
-
 import SelectSprintPoints from '../../UI/SelectPoints/SelectSprintPoints';
 import SelectMountainPoints from '../../UI/SelectPoints/SelectMountainPoints';
 import SelectCategory from '../../UI/SelectCategory/SelectCategory';
+import { tdRider, tdTime, valueMax } from '../../../Utils/table';
 
 const TableStageEditBody = ({ results, setPopup, changeCategory, setResults }) => {
 	return (
@@ -27,7 +26,6 @@ const TableStageEditBody = ({ results, setPopup, changeCategory, setResults }) =
 						}
 					</div>
 				);
-
 				const selectSprint = result.quantitySprints.map((elm, index) => (
 					<td key={elm}>
 						<SelectSprintPoints
@@ -52,84 +50,19 @@ const TableStageEditBody = ({ results, setPopup, changeCategory, setResults }) =
 						/>
 					</td>
 				));
-				const watt = String(result.watt).includes('max') ? (
-					<span className="maxRed">
-						{result.watt.replace('max', '')}
-						<small>w</small>
-					</span>
-				) : (
-					<span>
-						{result.watt}
-						<small>w</small>
-					</span>
-				);
-				const wattPerKg = String(result.wattPerKg).includes('max') ? (
-					<span className="maxRed">
-						{result.wattPerKg.replace('max', '')}
-						<small>w/kg</small>
-					</span>
-				) : (
-					<span>
-						{result.wattPerKg}
-						<small>w/kg</small>
-					</span>
-				);
-				const riderLogo = result.imageSrc ? result.imageSrc : avatar;
-				const rider = (
-					<div className={classes.rider}>
-						<img className={classes.logo} src={riderLogo} alt="Ph" /> <span>{result.name}</span>
-					</div>
-				);
-				const time = result.time.includes('.')
-					? [
-							result.time.split('.')[0],
-							<span className={classes.thousandthsSecond} key={Date.now()}>
-								.{result.time.split('.')[1]}
-							</span>,
-					  ]
-					: result.time;
-				const avgHeartRate = result.avgHeartRate ? (
-					<span>
-						{result.avgHeartRate}
-						<small>bpm</small>
-					</span>
-				) : (
-					''
-				);
-				const weightInGrams = result.weightInGrams ? (
-					<span>
-						{result.weightInGrams}
-						<small>kg</small>
-					</span>
-				) : (
-					''
-				);
-				const heightInCentimeters = result.heightInCentimeters ? (
-					<span>
-						{result.heightInCentimeters}
-						<small>cm</small>
-					</span>
-				) : (
-					''
-				);
-				// 	<td>
-				// 	<span dangerouslySetInnerHTML={{ __html: result.wattPerKg }}></span>
-				// 	<small>w/kg</small>
-				// </td>
-
 				return (
 					<tr key={result._id}>
 						<td>{result.placeAbsolute}</td>
 						<td>{category}</td>
-						<td>{watt}</td>
-						<td>{wattPerKg}</td>
-						<td>{rider}</td>
+						<td>{valueMax(result.watt, 'w')}</td>
+						<td>{valueMax(result.wattPerKg, 'w/kg')}</td>
+						<td>{tdRider(result.name, result.imageSrc)}</td>
 						{selectSprint}
 						{selectMountain}
-						<td>{time}</td>
-						<td>{avgHeartRate}</td>
-						<td>{weightInGrams}</td>
-						<td>{heightInCentimeters}</td>
+						<td>{tdTime(result.time)}</td>
+						<td>{valueMax(result.avgHeartRate, 'bpm')}</td>
+						<td>{valueMax(result.weightInGrams, 'kg')}</td>
+						<td>{valueMax(result.heightInCentimeters, 'cm')}</td>
 					</tr>
 				);
 			})}
