@@ -3,7 +3,7 @@ export const thTitles = [
 	'Rider',
 	'Time',
 	'Gap',
-	'GapPr',
+	'GapP',
 	'Watt',
 	'W/kg',
 	'Pulse',

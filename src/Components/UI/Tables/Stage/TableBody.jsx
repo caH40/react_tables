@@ -8,6 +8,52 @@ const TableBody = ({ results, category }) => {
 		<tbody>
 			{results.map(result => {
 				const riderLogo = result.imageSrc ? result.imageSrc : avatar;
+				const watt = String(result.watt).includes('max') ? (
+					<span className="maxRed">
+						{result.watt.replace('max', '')}
+						<small>w</small>
+					</span>
+				) : (
+					<span>
+						{result.watt}
+						<small>w</small>
+					</span>
+				);
+				const wattPerKg = String(result.wattPerKg).includes('max') ? (
+					<span className="maxRed">
+						{result.wattPerKg.replace('max', '')}
+						<small>w/kg</small>
+					</span>
+				) : (
+					<span>
+						{result.wattPerKg}
+						<small>w/kg</small>
+					</span>
+				);
+				const avgHeartRate = result.avgHeartRate ? (
+					<span>
+						{result.avgHeartRate}
+						<small>bpm</small>
+					</span>
+				) : (
+					''
+				);
+				const weightInGrams = result.weightInGrams ? (
+					<span>
+						{result.weightInGrams}
+						<small>kg</small>
+					</span>
+				) : (
+					''
+				);
+				const heightInCentimeters = result.heightInCentimeters ? (
+					<span>
+						{result.heightInCentimeters}
+						<small>cm</small>
+					</span>
+				) : (
+					''
+				);
 
 				return (
 					<tr key={result._id}>
@@ -29,11 +75,11 @@ const TableBody = ({ results, category }) => {
 						</td>
 						<td>{result.gap}</td>
 						<td>{result.gapPrev}</td>
-						<td>{result.watt}</td>
-						<td>{result.wattPerKg}</td>
-						<td>{result.avgHeartRate}</td>
-						<td>{result.weightInGrams}</td>
-						<td>{result.heightInCentimeters}</td>
+						<td>{watt}</td>
+						<td>{wattPerKg}</td>
+						<td>{avgHeartRate}</td>
+						<td>{weightInGrams}</td>
+						<td>{heightInCentimeters}</td>
 					</tr>
 				);
 			})}
