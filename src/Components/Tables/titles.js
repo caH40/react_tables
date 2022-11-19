@@ -33,3 +33,5 @@ export const titlesGeneral = [
 	'St.5',
 	'St.6',
 ];
+
+export const titlesSMPoints = ['#', 'Rider', 'Total', 'St.2', 'St.2', 'St.5', 'St.5'];
