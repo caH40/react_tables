@@ -37,9 +37,12 @@ export function tdTime(time) {
 		: time;
 }
 
-export function tdCategory(result, category) {
+export function tdPlace(result, category) {
 	return category === 'T' ? result.placeAbsolute : result.placeCategory;
 }
+export function tdCategory(result) {
+	return <div className={`${classes.category} ${classes[result.category]}`}>{result.category}</div>;
+}
 export function tdGap(gap) {
-	return <span className={classes.gap}>{gap ? ['+', gap] : ''}</span>;
+	return <div className={classes.gap}>{gap ? ['+', gap] : ''}</div>;
 }

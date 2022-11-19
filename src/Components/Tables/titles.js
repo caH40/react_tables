@@ -1,4 +1,5 @@
-export const thTitles = [
+export const titlesStage = [
+	'Cat',
 	'#',
 	'Rider',
 	'Time',

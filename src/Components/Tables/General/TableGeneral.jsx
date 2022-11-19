@@ -22,7 +22,7 @@ const TableGeneral = () => {
 	return (
 		<div>
 			<table className={classes.myTable}>
-				{/* <caption>{general[0]?.title}</caption> */}
+				<caption>Генеральный зачёт! Группа "{general[0]?.category}"</caption>
 				<thead>
 					<tr>
 						{titlesGeneral.map(thTitle => {

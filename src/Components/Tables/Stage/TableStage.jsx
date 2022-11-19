@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import { getResults } from '../../../api/getResults';
 import TableBody from './TableBody';
 import classes from '../Table.module.css';
-import { thTitles } from '../titles';
+import { titlesStage } from '../titles';
 
 const TableStage = () => {
 	const [results, setResults] = useState([]);
@@ -24,7 +24,7 @@ const TableStage = () => {
 				<caption>{results[0]?.title}</caption>
 				<thead>
 					<tr>
-						{thTitles.map(thTitle => {
+						{titlesStage.map(thTitle => {
 							return <th key={thTitle}>{thTitle}</th>;
 						})}
 					</tr>

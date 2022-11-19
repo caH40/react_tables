@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { tdCategory, tdGap, tdRider, tdTime, valueMax } from '../../../Utils/table';
+import { tdPlace, tdCategory, tdGap, tdRider, tdTime, valueMax } from '../../../Utils/table';
 
 const TableBody = ({ results, category }) => {
 	return (
@@ -9,6 +9,7 @@ const TableBody = ({ results, category }) => {
 				return (
 					<tr key={result._id}>
 						<td>{tdCategory(result, category)}</td>
+						<td>{tdPlace(result, category)}</td>
 						<td>{tdRider(result.name, result.imageSrc)}</td>
 						<td>{tdTime(result.time)}</td>
 						<td>{tdGap(result.gap)}</td>

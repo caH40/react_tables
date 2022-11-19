@@ -73,3 +73,24 @@
 	font-size: 12px;
 	color: gray;
 }
+.category {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	font-weight: bold;
+}
+.A {
+	background: #dc4119;
+}
+.B {
+	background: #58c34e;
+}
+.C {
+	background: #3ec0e9;
+}
+.W {
+	background: #9422ae;
+}
