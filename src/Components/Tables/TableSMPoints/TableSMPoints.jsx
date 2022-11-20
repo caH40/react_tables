@@ -5,8 +5,8 @@ import { useParams } from 'react-router-dom';
 
 import TableBody from './TableBody';
 import classes from '../Table.module.css';
-import { titlesSMPoints } from '../titles';
 import { getPointsMountain } from '../../../api/points-mountain';
+import TheadMountain from './TheadMountain';
 
 const TableSMPoints = () => {
 	const [points, setPoints] = useState([]);
@@ -17,17 +17,12 @@ const TableSMPoints = () => {
 	useEffect(() => {
 		getPointsMountain(series).then(data => setPoints(data));
 	}, []);
+
 	return (
 		<div>
 			<table className={classes.myTable}>
 				<caption>{typePoints === 'S' ? 'Спринтерский зачет' : 'Горный зачет'}</caption>
-				<thead>
-					<tr>
-						{titlesSMPoints.map(thTitle => {
-							return <th key={thTitle}>{thTitle}</th>;
-						})}
-					</tr>
-				</thead>
+				<TheadMountain points={points} />
 				<TableBody points={points} />
 			</table>
 			{points.length === 0 ? <div style={{ textAlign: 'center' }}>Loading...</div> : ''}

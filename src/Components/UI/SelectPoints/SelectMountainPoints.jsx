@@ -1,6 +1,6 @@
 import React from 'react';
 import { postSprintPoints } from '../../../api/stage-poinst';
-import { mountainTable } from '../../../Utils/points';
+import { mountainTable } from '../../../Utils/pointsTable';
 
 const SelectMountainPoints = ({ name, index, result, results, setResults, setPopup }) => {
 	const changePlace = e => {

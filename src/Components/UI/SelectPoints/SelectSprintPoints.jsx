@@ -1,6 +1,6 @@
 import React from 'react';
 import { postSprintPoints } from '../../../api/stage-poinst';
-import { sprintTable } from '../../../Utils/points';
+import { sprintTable } from '../../../Utils/pointsTable';
 
 const SelectSprintPoints = ({ name, index, result, results, setResults, setPopup }) => {
 	const changePlace = e => {

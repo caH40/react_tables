@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { tdPointsStage, tdPointsTotal } from '../../../Utils/general';
+import { tdPointsTotal, tdPointsStage } from '../../../Utils/points-sm';
 import { tdRider } from '../../../Utils/table';
 
 const TableBody = ({ points }) => {
@@ -12,10 +12,7 @@ const TableBody = ({ points }) => {
 						<td>{rider.sequence}</td>
 						<td>{tdRider(rider.name, rider.imageSrc)}</td>
 						<td>{tdPointsTotal(rider)}</td>
-						<td>{tdPointsStage(rider, 1)}</td>
-						<td>{tdPointsStage(rider, 2)}</td>
-						<td>{tdPointsStage(rider, 3)}</td>
-						<td>{tdPointsStage(rider, 4)}</td>
+						{tdPointsStage(rider)}
 					</tr>
 				);
 			})}
