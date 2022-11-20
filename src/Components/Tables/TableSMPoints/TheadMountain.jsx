@@ -12,7 +12,7 @@ const TheadMountain = ({ points }) => {
 				{points[0]?.stages.map((stage, index) => {
 					return (
 						<th colSpan={points[0]?.stages.length} key={index}>
-							<span>Stage {stage.number}</span>
+							<span>Stage{stage.number}</span>
 						</th>
 					);
 				})}
