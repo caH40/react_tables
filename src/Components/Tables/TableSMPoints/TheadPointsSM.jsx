@@ -1,7 +1,7 @@
 import React from 'react';
-import MountainsInStage from './MountainsInStage';
+import Discipline from './Discipline';
 
-const TheadMountain = ({ points }) => {
+const TheadPointsSM = ({ points, typePoints }) => {
 	return (
 		<thead>
 			<tr>
@@ -17,9 +17,9 @@ const TheadMountain = ({ points }) => {
 					);
 				})}
 			</tr>
-			<MountainsInStage points={points} />
+			<Discipline points={points} typePoints={typePoints} />
 		</thead>
 	);
 };
 
-export default TheadMountain;
+export default TheadPointsSM;

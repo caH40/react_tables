@@ -1,9 +1,14 @@
 import React from 'react';
 
-const MountainsInStage = ({ points }) => {
+const stringForType = {
+	S: { quantity: 'quantitySprints' },
+	M: { quantity: 'quantityMountains' },
+};
+
+const Discipline = ({ points, typePoints }) => {
 	const mountainsInStage = [];
 	points[0]?.stages?.forEach((stage, index) => {
-		for (let i = 0; i < stage.quantityMountains; i++) {
+		for (let i = 0; i < stage[stringForType[typePoints].quantity]; i++) {
 			mountainsInStage.push(
 				<th key={String(index) + String(i)}>
 					<div>{i + 1}</div>
@@ -14,4 +19,4 @@ const MountainsInStage = ({ points }) => {
 	return <tr>{mountainsInStage}</tr>;
 };
 
-export default MountainsInStage;
+export default Discipline;
