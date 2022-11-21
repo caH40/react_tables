@@ -16,6 +16,7 @@ export function useTelegram() {
 		};
 
 		return {
+			showPopup: tg.showPopup,
 			onClose,
 			onToggleButton,
 			tg,

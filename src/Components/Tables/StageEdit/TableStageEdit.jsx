@@ -14,7 +14,7 @@ const TableStageEdit = () => {
 	const [popup, setPopup] = useState('');
 
 	const { params } = useParams();
-	const { tg } = useTelegram();
+	const { showPopup } = useTelegram();
 
 	useEffect(() => {
 		getResults(params).then(data => {
@@ -32,13 +32,11 @@ const TableStageEdit = () => {
 
 	useMemo(() => {
 		if (popup)
-			tg.showPopup(
+			showPopup(
 				{ title: 'Выполнена операция', message: popup, buttons: [{ type: 'close', id: 1 }] },
-				() => {
-					setPopup('');
-				}
+				() => setPopup('')
 			);
-	}, [popup, tg]);
+	}, [popup, showPopup]);
 
 	return (
 		<div>
