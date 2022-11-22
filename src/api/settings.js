@@ -12,7 +12,7 @@ export async function postSettings(settings) {
 	const result = await axios.post(`${serverExpress}/api/user/post-settings`, settings, {
 		'Content-type': 'application/json',
 	});
-	// console.log(result);
-	// console.log('result.data.settings', result.data.settings);
-	// return result.data.settings;
+
+	console.log(result.data.response);
+	return result.data.response;
 }
