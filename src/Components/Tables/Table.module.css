@@ -23,7 +23,7 @@
 	border: none;
 	padding: 3px 4px;
 	font-size: 14px;
-	vertical-align: top;
+	/* vertical-align: top; */
 }
 
 .myTable tbody tr:nth-child(even) {
@@ -72,6 +72,8 @@
 .pointsWrong {
 	font-size: 12px;
 	color: gray;
+}
+.select {
 }
 .category {
 	display: flex;

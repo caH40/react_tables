@@ -1,26 +1,42 @@
 import React from 'react';
 
-import classes from '../Table.module.css';
+import cls from '../Table.module.css';
 import SelectSprintPoints from '../../UI/SelectPoints/SelectSprintPoints';
 import SelectMountainPoints from '../../UI/SelectPoints/SelectMountainPoints';
 import SelectCategory from '../../UI/SelectCategory/SelectCategory';
 import { tdRider, tdTime, valueMax } from '../../../Utils/table';
+import SelectPenalty from '../../UI/SelectPenalty/SelectPenalty';
 
-const TableStageEditBody = ({ results, setPopup, changeCategory, setResults }) => {
+const TableStageEditBody = ({ results, setPopup, setResults }) => {
 	return (
 		<tbody>
 			{results.map(result => {
 				const category = (
-					<div className={classes.category}>
+					<div className={cls.select}>
 						{
 							<SelectCategory
 								results={results}
 								setResults={setResults}
-								changeCategory={changeCategory}
 								setPopup={setPopup}
 								zwiftId={result.zwiftRiderId}
 								stageId={result.stageId}
 								defaultValue={result.category}
+								key={result._id}
+							/>
+						}
+					</div>
+				);
+				const penalty = (
+					<div className={cls.select}>
+						{
+							<SelectPenalty
+								result={result}
+								results={results}
+								setResults={setResults}
+								setPopup={setPopup}
+								zwiftId={result.zwiftRiderId}
+								stageId={result.stageId}
+								defaultValue={result.penalty.powerUp}
 								key={result._id}
 							/>
 						}
@@ -52,6 +68,7 @@ const TableStageEditBody = ({ results, setPopup, changeCategory, setResults }) =
 				));
 				return (
 					<tr key={result._id}>
+						<td>{penalty}</td>
 						<td>{result.placeAbsolute}</td>
 						<td>{category}</td>
 						<td>{valueMax(result.watt, 'w')}</td>

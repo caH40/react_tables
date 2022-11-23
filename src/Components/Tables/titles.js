@@ -12,6 +12,7 @@ export const titlesStage = [
 	'Height',
 ];
 export const titlesStageEdit = [
+	'Penalty',
 	'#',
 	'Category',
 	'Watt',
