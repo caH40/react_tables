@@ -1,6 +1,5 @@
 import React from 'react';
 
-import cls from '../Table.module.css';
 import SelectSprintPoints from '../../UI/SelectPoints/SelectSprintPoints';
 import SelectMountainPoints from '../../UI/SelectPoints/SelectMountainPoints';
 import SelectCategory from '../../UI/SelectCategory/SelectCategory';
@@ -12,7 +11,7 @@ const TableStageEditBody = ({ results, setPopup, setResults }) => {
 		<tbody>
 			{results.map(result => {
 				const category = (
-					<div className={cls.select}>
+					<div>
 						{
 							<SelectCategory
 								results={results}
@@ -27,7 +26,7 @@ const TableStageEditBody = ({ results, setPopup, setResults }) => {
 					</div>
 				);
 				const penalty = (
-					<div className={cls.select}>
+					<div>
 						{
 							<SelectPenalty
 								result={result}
@@ -35,7 +34,6 @@ const TableStageEditBody = ({ results, setPopup, setResults }) => {
 								setResults={setResults}
 								setPopup={setPopup}
 								zwiftId={result.zwiftRiderId}
-								stageId={result.stageId}
 								defaultValue={result.penalty.powerUp}
 								key={result._id}
 							/>

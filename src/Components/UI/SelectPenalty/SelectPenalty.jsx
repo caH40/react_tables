@@ -2,15 +2,7 @@ import React from 'react';
 import { postStagePenalty } from '../../../api/stage-penalty';
 import cls from './SelectPenalty.module.css';
 
-const SelectPenalty = ({
-	result,
-	defaultValue,
-	zwiftId,
-	stageId,
-	setPopup,
-	results,
-	setResults,
-}) => {
+const SelectPenalty = ({ result, defaultValue, zwiftId, setPopup, results, setResults }) => {
 	const changePenalty = e => {
 		const newPenalty = Number(e.target.value);
 

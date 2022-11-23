@@ -40,7 +40,6 @@ const TableStageEdit = () => {
 
 	return (
 		<div>
-			{/* {popup ? <div>{popup}</div> : ''} */}
 			<table className={classes.myTable}>
 				<caption>{results[0]?.title}</caption>
 				<thead>

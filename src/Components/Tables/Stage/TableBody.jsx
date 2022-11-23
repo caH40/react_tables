@@ -1,8 +1,21 @@
 import React from 'react';
 
-import { tdPlace, tdCategory, tdGap, tdRider, tdTime, valueMax } from '../../../Utils/table';
+import {
+	tdPlace,
+	tdCategory,
+	tdGap,
+	tdRider,
+	tdTime,
+	valueMax,
+	tdPenalty,
+} from '../../../Utils/table';
 
 const TableBody = ({ results, category }) => {
+	// let hasPenalty = false;
+	// results.forEach(result => {
+	// 	if (result.penalty.powerUp !== 0) hasPenalty = true;
+	// });
+
 	return (
 		<tbody>
 			{results.map(result => {
@@ -19,6 +32,7 @@ const TableBody = ({ results, category }) => {
 						<td>{valueMax(result.avgHeartRate, 'bpm')}</td>
 						<td>{valueMax(result.weightInGrams, 'kg')}</td>
 						<td>{valueMax(result.heightInCentimeters, 'cm')}</td>
+						<td>{tdPenalty(result.penalty, result._id)}</td>
 					</tr>
 				);
 			})}

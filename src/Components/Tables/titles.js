@@ -10,6 +10,7 @@ export const titlesStage = [
 	'Pulse',
 	'Weight',
 	'Height',
+	'Penalty',
 ];
 export const titlesStageEdit = [
 	'Penalty',
