@@ -1,4 +1,4 @@
-import classes from '../Components/Tables/Table.module.css';
+import cls from '../Components/Tables/Table.module.css';
 
 export function tdPointsStage(rider, numberStage) {
 	const type = {
@@ -12,29 +12,29 @@ export function tdPointsStage(rider, numberStage) {
 
 	const resultFirst = rider.pointsStage.find(stage => stage.number === type[numberStage].f)
 		? rider.pointsStage.find(stage => stage.number === type[numberStage].f).points
-		: ' ';
+		: -1;
 	const resultSecond = rider.pointsStage.find(stage => stage.number === type[numberStage].s)
 		? rider.pointsStage.find(stage => stage.number === type[numberStage].s).points
-		: ' ';
+		: -1;
 
-	if (resultFirst > resultSecond)
-		return <span className={classes.totalCorrect}>{resultFirst}</span>;
+	if (resultFirst > resultSecond) return <span className={cls.totalCorrect}>{resultFirst}</span>;
 
 	if (resultFirst === resultSecond) {
 		if (numberStage === 1 || numberStage === 2 || numberStage === 3) {
-			return <span className={classes.totalCorrect}>{resultFirst}</span>;
+			return <span className={cls.totalCorrect}>{resultFirst !== -1 ? resultFirst : '-'}</span>;
 		} else {
-			return <span className={classes.pointsWrong}>{resultFirst}</span>;
+			return <span className={cls.pointsWrong}>{resultFirst !== -1 ? resultFirst : '-'}</span>;
 		}
 	}
 
-	if (resultFirst < resultSecond) return <span className={classes.pointsWrong}>{resultFirst}</span>;
+	if (resultFirst < resultSecond)
+		return <span className={cls.pointsWrong}>{resultFirst !== -1 ? resultFirst : '-'}</span>;
 }
 
 export function tdPointsTotal(rider) {
 	if (rider.resultStatus) {
-		return <span className={classes.totalCorrect}>{rider.pointsTotal}</span>;
+		return <span className={cls.totalCorrect}>{rider.pointsTotal}</span>;
 	} else {
-		return <span className={classes.totalWrong}>{rider.pointsTotal}</span>;
+		return <span className={cls.totalWrong}>{rider.pointsTotal}</span>;
 	}
 }

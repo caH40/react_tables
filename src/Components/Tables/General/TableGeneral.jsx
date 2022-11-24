@@ -18,7 +18,7 @@ const TableGeneral = () => {
 	useEffect(() => {
 		getGeneral(series).then(data => setGeneral(data));
 	}, []);
-	// console.log(general);
+
 	return (
 		<div>
 			<table className={classes.myTable}>
