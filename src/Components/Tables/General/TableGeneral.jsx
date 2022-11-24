@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import TableBody from './TableBody';
-import classes from '../Table.module.css';
+import cls from '../Table.module.css';
 import { titlesGeneral } from '../titles';
 import { getGeneral } from '../../../api/general-series';
 
@@ -21,7 +21,7 @@ const TableGeneral = () => {
 
 	return (
 		<div>
-			<table className={classes.myTable}>
+			<table className={cls.myTable}>
 				<caption>Генеральный зачёт! Группа "{general[0]?.category}"</caption>
 				<thead>
 					<tr>

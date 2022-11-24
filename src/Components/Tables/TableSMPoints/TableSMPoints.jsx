@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import TableBody from './TableBody';
-import classes from '../Table.module.css';
+import cls from '../Table.module.css';
 import { getPointsSM } from '../../../api/points-sm';
 import TheadPointsSM from './TheadPointsSM';
 
@@ -20,7 +20,7 @@ const TableSMPoints = () => {
 
 	return (
 		<div>
-			<table className={classes.myTable}>
+			<table className={cls.myTable}>
 				<caption>{typePoints === 'S' ? 'Спринтерский зачет' : 'Горный зачет'}</caption>
 				<TheadPointsSM points={points} typePoints={typePoints} />
 				<TableBody points={points} typePoints={typePoints} />
