@@ -2,6 +2,7 @@ import React from 'react';
 
 import { tdPointsTotal, tdPointsStage } from '../../../Utils/points-sm';
 import { tdRider } from '../../../Utils/table';
+import cls from '../Table.module.css';
 
 const TableBody = ({ points, typePoints }) => {
 	return (
@@ -9,9 +10,9 @@ const TableBody = ({ points, typePoints }) => {
 			{points.map(rider => {
 				return (
 					<tr key={rider.name}>
-						<td>{rider.sequence}</td>
+						<td className={cls.tdPointsStage}>{rider.sequence}</td>
 						<td>{tdRider(rider.name, rider.imageSrc)}</td>
-						<td>{tdPointsTotal(rider, typePoints)}</td>
+						<td className={cls.tdPointsStage}>{tdPointsTotal(rider, typePoints)}</td>
 						{tdPointsStage(rider, typePoints)}
 					</tr>
 				);

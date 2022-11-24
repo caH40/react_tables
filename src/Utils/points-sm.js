@@ -1,7 +1,7 @@
-import classes from '../Components/Tables/Table.module.css';
+import cls from '../Components/Tables/Table.module.css';
 
 export function tdPointsTotal(rider) {
-	return <span className={classes.totalCorrect}>{rider.pointsTotal}</span>;
+	return <span className={cls.totalCorrect}>{rider.pointsTotal}</span>;
 }
 
 export function tdPointsStage(rider, typePoints) {
@@ -19,14 +19,16 @@ export function tdPointsStage(rider, typePoints) {
 					discipline[stringForType[typePoints].type] === j + 1
 			);
 
-			const classGray = oneResult?.points === 0 ? classes.pointsWrong : '';
+			const classGray =
+				oneResult?.points === 0 ? `${cls.pointsWrong} ${cls.tdPointsStage}` : cls.tdPointsStage;
+
 			let key = `i${i}j${j}`;
 			let tdTemp = oneResult ? (
 				<td className={classGray} key={key}>
 					{oneResult.points}
 				</td>
 			) : (
-				<td className={classes.pointsWrong} key={key}>
+				<td className={`${cls.pointsWrong} ${cls.tdPointsStage}`} key={key}>
 					{'-'}
 				</td>
 			);
