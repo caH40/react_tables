@@ -1,4 +1,5 @@
 import React from 'react';
+import cls from '../Table.module.css';
 
 import { tdPointsStage, tdPointsTotal } from '../../../Utils/general';
 import { tdRider } from '../../../Utils/table';
@@ -9,15 +10,15 @@ const TableBody = ({ general }) => {
 			{general.map(rider => {
 				return (
 					<tr key={rider.name}>
-						<td>{rider.sequence}</td>
-						<td>{tdRider(rider.name, rider.imageSrc)}</td>
-						<td>{tdPointsTotal(rider)}</td>
-						<td>{tdPointsStage(rider, 1)}</td>
-						<td>{tdPointsStage(rider, 2)}</td>
-						<td>{tdPointsStage(rider, 3)}</td>
-						<td>{tdPointsStage(rider, 4)}</td>
-						<td>{tdPointsStage(rider, 5)}</td>
-						<td>{tdPointsStage(rider, 6)}</td>
+						<td className={cls.tdPointsStage}>{rider.sequence}</td>
+						<td className={cls.tdRiderStage}>{tdRider(rider.name, rider.imageSrc)}</td>
+						<td className={cls.tdPointsTotalStage}>{tdPointsTotal(rider)}</td>
+						<td className={cls.tdPointsStage}>{tdPointsStage(rider, 1)}</td>
+						<td className={cls.tdPointsStage}>{tdPointsStage(rider, 2)}</td>
+						<td className={cls.tdPointsStage}>{tdPointsStage(rider, 3)}</td>
+						<td className={cls.tdPointsStageSecond}>{tdPointsStage(rider, 4)}</td>
+						<td className={cls.tdPointsStageSecond}>{tdPointsStage(rider, 5)}</td>
+						<td className={cls.tdPointsStageSecond}>{tdPointsStage(rider, 6)}</td>
 					</tr>
 				);
 			})}

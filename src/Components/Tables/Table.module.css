@@ -19,11 +19,9 @@
 }
 
 .myTable tbody td {
-	text-align: left;
 	border: none;
 	padding: 3px 4px;
 	font-size: 14px;
-	/* vertical-align: top; */
 }
 
 .myTable tbody tr:nth-child(even) {
@@ -65,6 +63,7 @@
 }
 .totalCorrect {
 	font-weight: bold;
+	text-align: center;
 }
 .totalWrong {
 	color: gray;
@@ -104,4 +103,18 @@
 }
 .W {
 	background: #9422ae;
+}
+.tdPointsStage {
+	text-align: center;
+}
+.tdPointsTotalStage {
+	background-color: rgba(140, 140, 140, 0.3);
+	text-align: center;
+}
+.tdPointsStageSecond {
+	background-color: rgba(140, 140, 140, 0.15);
+	text-align: center;
+}
+.tdRiderStage {
+	text-align: left;
 }
