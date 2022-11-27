@@ -55,6 +55,12 @@
 	border-radius: 50%;
 	margin-right: 5px;
 }
+.logoTeam {
+	width: 50px;
+	height: 50px;
+	border-radius: 40%;
+	margin-right: 5px;
+}
 
 .thousandthsSecond {
 	font-size: 10px;
