@@ -7,6 +7,7 @@ import TableBody from './TableBody';
 import cls from '../Table.module.css';
 import { titlesGeneral } from '../titles';
 import { getGeneral } from '../../../api/general-series';
+import Spinner from '../../UI/Spin/Spin';
 
 const TableGeneral = () => {
 	const [general, setGeneral] = useState([]);
@@ -32,7 +33,11 @@ const TableGeneral = () => {
 				</thead>
 				<TableBody category={category} general={general} />
 			</table>
-			{general.length === 0 ? <div style={{ textAlign: 'center' }}>Loading...</div> : ''}
+			{general.length === 0 ? (
+				<div style={{ display: 'flex', justifyContent: 'center' }}>{<Spinner />}</div>
+			) : (
+				''
+			)}
 		</div>
 	);
 };

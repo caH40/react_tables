@@ -7,6 +7,7 @@ import TableBody from './TableBody';
 import cls from '../Table.module.css';
 import { getPointsSM } from '../../../api/points-sm';
 import TheadPointsSM from './TheadPointsSM';
+import Spinner from '../../UI/Spin/Spin';
 
 const TableSMPoints = () => {
 	const [points, setPoints] = useState([]);
@@ -25,7 +26,11 @@ const TableSMPoints = () => {
 				<TheadPointsSM points={points} typePoints={typePoints} />
 				<TableBody points={points} typePoints={typePoints} />
 			</table>
-			{points.length === 0 ? <div style={{ textAlign: 'center' }}>Loading...</div> : ''}
+			{points.length === 0 ? (
+				<div style={{ display: 'flex', justifyContent: 'center' }}>{<Spinner />}</div>
+			) : (
+				''
+			)}
 		</div>
 	);
 };

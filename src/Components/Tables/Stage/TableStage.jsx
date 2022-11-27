@@ -7,6 +7,7 @@ import { getResults } from '../../../api/getResults';
 import TableBody from './TableBody';
 import classes from '../Table.module.css';
 import { titlesStage } from '../titles';
+import Spinner from '../../UI/Spin/Spin';
 
 const TableStage = () => {
 	const [results, setResults] = useState([]);
@@ -31,7 +32,11 @@ const TableStage = () => {
 				</thead>
 				<TableBody category={category} results={results} />
 			</table>
-			{results.length === 0 ? <div style={{ textAlign: 'center' }}>Loading...</div> : ''}
+			{results.length === 0 ? (
+				<div style={{ display: 'flex', justifyContent: 'center' }}>{<Spinner />}</div>
+			) : (
+				''
+			)}
 		</div>
 	);
 };

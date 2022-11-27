@@ -8,6 +8,7 @@ import TableStageEditBody from './TableStageEditBody';
 import classes from '../Table.module.css';
 import { titlesStageEdit } from '../titles';
 import { useTelegram } from '../../../hooks/useTelegram';
+import Spinner from '../../UI/Spin/Spin';
 
 const TableStageEdit = () => {
 	const [results, setResults] = useState([]);
@@ -51,7 +52,11 @@ const TableStageEdit = () => {
 				</thead>
 				<TableStageEditBody setPopup={setPopup} results={results} setResults={setResults} />
 			</table>
-			{results.length === 0 ? <div style={{ textAlign: 'center' }}>Loading...</div> : ''}
+			{results.length === 0 ? (
+				<div style={{ display: 'flex', justifyContent: 'center' }}>{<Spinner />}</div>
+			) : (
+				''
+			)}
 		</div>
 	);
 };
