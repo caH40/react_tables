@@ -8,16 +8,20 @@ import cls from '../Table.module.css';
 import { getPointsSM } from '../../../api/points-sm';
 import TheadPointsSM from './TheadPointsSM';
 import Spinner from '../../UI/Spin/Spin';
+import { postClick } from '../../../api/clicks';
+import { useTelegram } from '../../../hooks/useTelegram';
 
 const TableSMPoints = () => {
 	const [points, setPoints] = useState([]);
 
+	const { userId } = useTelegram();
 	let { series } = useParams();
 	const typePoints = series.slice(0, 1);
 
 	useEffect(() => {
 		getPointsSM(series, typePoints).then(data => setPoints(data));
-	}, []);
+		postClick(userId);
+	}, [series, userId, typePoints]);
 
 	return (
 		<div>

@@ -8,17 +8,21 @@ import cls from '../Table.module.css';
 import { titlesGeneral } from '../titles';
 import { getGeneral } from '../../../api/general-series';
 import Spinner from '../../UI/Spin/Spin';
+import { postClick } from '../../../api/clicks';
+import { useTelegram } from '../../../hooks/useTelegram';
 
 const TableGeneral = () => {
 	const [general, setGeneral] = useState([]);
 
+	const { userId } = useTelegram();
 	let { series } = useParams();
 
 	const category = series.slice(0, 1);
 
 	useEffect(() => {
 		getGeneral(series).then(data => setGeneral(data));
-	}, []);
+		postClick(userId);
+	}, [series, userId]);
 
 	return (
 		<div>
