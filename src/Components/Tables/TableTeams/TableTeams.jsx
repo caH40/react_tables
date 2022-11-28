@@ -6,14 +6,19 @@ import TableBody from './TableBody';
 import TableThead from './TableThead';
 import cls from '../Table.module.css';
 import Spinner from '../../UI/Spin/Spin';
+import { postClick } from '../../../api/clicks';
+import { useTelegram } from '../../../hooks/useTelegram';
 
 const TableTeams = () => {
 	const [points, setTeamPoints] = useState([]);
+
+	const { userId } = useTelegram();
 	const { series } = useParams();
 
 	useEffect(() => {
 		getPointsTeams(series).then(data => setTeamPoints(data));
-	}, []);
+		postClick(userId);
+	}, [series, userId]);
 
 	return (
 		<div>

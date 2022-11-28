@@ -8,16 +8,20 @@ import TableBody from './TableBody';
 import classes from '../Table.module.css';
 import { titlesStage } from '../titles';
 import Spinner from '../../UI/Spin/Spin';
+import { useTelegram } from '../../../hooks/useTelegram';
+import { postClick } from '../../../api/clicks';
 
 const TableStage = () => {
 	const [results, setResults] = useState([]);
 
+	const { userId } = useTelegram();
 	let { params } = useParams();
 	const category = params.slice(0, 1);
 
 	useEffect(() => {
 		getResults(params).then(data => setResults(data));
-	}, []);
+		postClick(userId);
+	}, [params, userId]);
 
 	return (
 		<div>
