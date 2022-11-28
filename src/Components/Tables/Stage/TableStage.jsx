@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 
 import { getResults } from '../../../api/getResults';
 import TableBody from './TableBody';
-import classes from '../Table.module.css';
+import cls from '../Table.module.css';
 import { titlesStage } from '../titles';
 import Spinner from '../../UI/Spin/Spin';
 import { useTelegram } from '../../../hooks/useTelegram';
@@ -25,7 +25,7 @@ const TableStage = () => {
 
 	return (
 		<div>
-			<table className={classes.myTable}>
+			<table className={cls.myTable}>
 				<caption>{results[0]?.title}</caption>
 				<thead>
 					<tr>

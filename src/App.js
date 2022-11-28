@@ -12,6 +12,8 @@ import EditStage from './Pages/StageEdit';
 import TableGeneral from './Components/Tables/General/TableGeneral';
 import TableSMPoints from './Components/Tables/TableSMPoints/TableSMPoints';
 import TableTeams from './Components/Tables/TableTeams/TableTeams';
+import TableStatStages from './Components/Tables/TableStatStages/TableStatStages';
+import TableStatRiders from './Components/Tables/TableStatRiders/TableStatRiders';
 
 function App() {
 	const { tg } = useTelegram();
@@ -32,6 +34,8 @@ function App() {
 				<Route path="results/sprint/:series" element={<TableSMPoints />} />
 				<Route path="results/teams/:series" element={<TableTeams />} />
 				<Route path="edit/stage/:params" element={<EditStage />} />
+				<Route path="statistics/riders/" element={<TableStatRiders />} />
+				<Route path="statistics/stages/" element={<TableStatStages />} />
 			</Routes>
 		</div>
 	);
