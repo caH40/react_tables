@@ -1,9 +1,9 @@
 import React from 'react';
 import classes from './Button.module.css';
 
-const Button = ({ children, ...props }) => {
+const Button = ({ children, sendForm }) => {
 	return (
-		<button className={classes.myBtn} {...props}>
+		<button onClick={sendForm} className={classes.myBtn} type="button">
 			{children}
 		</button>
 	);
