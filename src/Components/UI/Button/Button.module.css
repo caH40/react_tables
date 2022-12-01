@@ -1,5 +1,6 @@
 .myBtn {
-	margin: 5px;
+	display: block;
+	margin: 5px 0px;
 	padding: 10px 15px;
 	background: var(--tg-theme-button-color);
 	color: var(--tg-theme-button-text-color);
@@ -7,4 +8,7 @@
 	border-radius: 5px;
 	outline: none;
 	cursor: pointer;
+}
+.myBtn:hover {
+	opacity: 0.9;
 }

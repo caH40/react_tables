@@ -34,7 +34,7 @@ const SettingsNotice = () => {
 	};
 
 	return (
-		<div className="webApp">
+		<div className="notice">
 			<h2>Параметры оповещения</h2>
 			<Checkbox updateSettings={updateSettings} settings={box} label="Новости" id="news" />
 			<Checkbox
