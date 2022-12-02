@@ -2,10 +2,16 @@ import React from 'react';
 
 import cls from '../Table.module.css';
 import { tdTime } from '../../../Utils/statistics';
+import Spinner from '../../UI/Spinner/Spinner';
 
-const TableBody = ({ results }) => {
+const TableBody = ({ results, isLoading }) => {
 	return (
 		<tbody>
+			<tr>
+				<td colSpan={6}>
+					<Spinner isLoading={isLoading} />
+				</td>
+			</tr>
 			{results.map((result, index) => {
 				return (
 					<tr key={result._id}>
