@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import { postClick } from '../api/clicks';
 import { getTeams } from '../api/teams-list';
 import avatar from '../Components/images/avatar.svg';
 import Spinner from '../Components/UI/Spinner/Spinner';
+import { useTelegram } from '../hooks/useTelegram';
 
 const TeamsList = () => {
 	const [teams, setTeams] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
 
+	const { userId } = useTelegram();
+
 	useEffect(() => {
 		getTeams(setIsLoading).then(data => setTeams(data));
+		postClick(userId);
 	}, []);
 
 	return (
