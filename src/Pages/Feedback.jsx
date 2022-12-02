@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getFeedback, postFeedback } from '../api/feedback';
 import Form from '../Components/UI/Form/Form';
-import Spinner from '../Components/UI/Spin/Spin';
+import Spinner from '../Components/UI/Spinner/Spinner';
 import { useTelegram } from '../hooks/useTelegram';
 
 const Feedback = () => {

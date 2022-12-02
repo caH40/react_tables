@@ -7,12 +7,12 @@ import TableBody from './TableBody';
 import cls from '../Table.module.css';
 import { titlesGeneral } from '../titles';
 import { getGeneral } from '../../../api/general-series';
-import Spinner from '../../UI/Spin/Spin';
 import { postClick } from '../../../api/clicks';
 import { useTelegram } from '../../../hooks/useTelegram';
 
 const TableGeneral = () => {
 	const [general, setGeneral] = useState([]);
+	const [isLoading, setIsLoading] = useState(false);
 
 	const { userId } = useTelegram();
 	let { series } = useParams();
@@ -20,7 +20,7 @@ const TableGeneral = () => {
 	const category = series.slice(0, 1);
 
 	useEffect(() => {
-		getGeneral(series).then(data => setGeneral(data));
+		getGeneral(series, setIsLoading).then(data => setGeneral(data));
 		postClick(userId);
 	}, [series, userId]);
 
@@ -35,13 +35,8 @@ const TableGeneral = () => {
 						})}
 					</tr>
 				</thead>
-				<TableBody category={category} general={general} />
+				<TableBody isLoading={isLoading} category={category} general={general} />
 			</table>
-			{general.length === 0 ? (
-				<div style={{ display: 'flex', justifyContent: 'center' }}>{<Spinner />}</div>
-			) : (
-				''
-			)}
 		</div>
 	);
 };

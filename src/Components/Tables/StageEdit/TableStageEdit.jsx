@@ -8,17 +8,17 @@ import TableStageEditBody from './TableStageEditBody';
 import classes from '../Table.module.css';
 import { titlesStageEdit } from '../titles';
 import { useTelegram } from '../../../hooks/useTelegram';
-import Spinner from '../../UI/Spin/Spin';
 
 const TableStageEdit = () => {
 	const [results, setResults] = useState([]);
 	const [popup, setPopup] = useState('');
+	const [isLoading, setIsLoading] = useState(false);
 
 	const { params } = useParams();
 	const { showPopup } = useTelegram();
 
 	useEffect(() => {
-		getResults(params).then(data => {
+		getResults(params, setIsLoading).then(data => {
 			const quantitySprints = data[0]?.pointsSprint.map(elm => 'sprint' + elm.sprint);
 			const quantityMountains = data[0]?.pointsMountain.map(elm => 'mountain' + elm.mountain);
 			titlesStageEdit.splice(5, 0, ...quantitySprints, ...quantityMountains);
@@ -50,13 +50,13 @@ const TableStageEdit = () => {
 						})}
 					</tr>
 				</thead>
-				<TableStageEditBody setPopup={setPopup} results={results} setResults={setResults} />
+				<TableStageEditBody
+					isLoading={isLoading}
+					setPopup={setPopup}
+					results={results}
+					setResults={setResults}
+				/>
 			</table>
-			{results.length === 0 ? (
-				<div style={{ display: 'flex', justifyContent: 'center' }}>{<Spinner />}</div>
-			) : (
-				''
-			)}
 		</div>
 	);
 };

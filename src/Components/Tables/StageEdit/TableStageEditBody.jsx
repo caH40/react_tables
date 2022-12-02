@@ -5,10 +5,16 @@ import SelectMountainPoints from '../../UI/SelectPoints/SelectMountainPoints';
 import SelectCategory from '../../UI/SelectCategory/SelectCategory';
 import { tdRider, tdTime, valueMax } from '../../../Utils/table';
 import SelectPenalty from '../../UI/SelectPenalty/SelectPenalty';
+import Spinner from '../../UI/Spinner/Spinner';
 
-const TableStageEditBody = ({ results, setPopup, setResults }) => {
+const TableStageEditBody = ({ results, setPopup, setResults, isLoading }) => {
 	return (
 		<tbody>
+			<tr>
+				<td colSpan={10}>
+					<Spinner isLoading={isLoading} />
+				</td>
+			</tr>
 			{results.map(result => {
 				const category = (
 					<div>

@@ -1,16 +1,24 @@
 import React, { useEffect, useState } from 'react';
+import { postClick } from '../api/clicks';
 import { getTeams } from '../api/teams-list';
 import avatar from '../Components/images/avatar.svg';
+import Spinner from '../Components/UI/Spinner/Spinner';
+import { useTelegram } from '../hooks/useTelegram';
 
 const TeamsList = () => {
 	const [teams, setTeams] = useState([]);
-	console.log(teams);
+	const [isLoading, setIsLoading] = useState(false);
+
+	const { userId } = useTelegram();
+
 	useEffect(() => {
-		getTeams().then(data => setTeams(data));
-	}, []);
+		getTeams(setIsLoading).then(data => setTeams(data));
+		postClick(userId);
+	}, [userId]);
 
 	return (
 		<div>
+			<Spinner isLoading={isLoading} />
 			{teams.map(team => (
 				<div key={team._id} className="team__inner">
 					<h3>{team.name}</h3>

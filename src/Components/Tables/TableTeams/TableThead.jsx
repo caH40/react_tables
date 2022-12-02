@@ -8,7 +8,7 @@ const TableThead = ({ points }) => {
 				<th>Team</th>
 				<th>Total</th>
 				{points[0]?.team.map((stage, index) => (
-					<th key={index}>St.{stage.stageNumber}</th>
+					<th key={index}>St{stage.stageNumber}</th>
 				))}
 			</tr>
 		</thead>

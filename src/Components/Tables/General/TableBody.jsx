@@ -3,10 +3,16 @@ import cls from '../Table.module.css';
 
 import { tdPointsStage, tdPointsTotal } from '../../../Utils/general';
 import { tdRider } from '../../../Utils/table';
+import Spinner from '../../UI/Spinner/Spinner';
 
-const TableBody = ({ general }) => {
+const TableBody = ({ general, isLoading }) => {
 	return (
 		<tbody>
+			<tr>
+				<td colSpan={10}>
+					<Spinner isLoading={isLoading} />
+				</td>
+			</tr>
 			{general.map(rider => {
 				return (
 					<tr key={rider.name}>

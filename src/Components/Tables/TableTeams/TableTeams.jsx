@@ -5,18 +5,18 @@ import { getPointsTeams } from '../../../api/points-teams';
 import TableBody from './TableBody';
 import TableThead from './TableThead';
 import cls from '../Table.module.css';
-import Spinner from '../../UI/Spin/Spin';
 import { postClick } from '../../../api/clicks';
 import { useTelegram } from '../../../hooks/useTelegram';
 
 const TableTeams = () => {
 	const [points, setTeamPoints] = useState([]);
+	const [isLoading, setIsLoading] = useState(false);
 
 	const { userId } = useTelegram();
 	const { series } = useParams();
 
 	useEffect(() => {
-		getPointsTeams(series).then(data => setTeamPoints(data));
+		getPointsTeams(series, setIsLoading).then(data => setTeamPoints(data));
 		postClick(userId);
 	}, [series, userId]);
 
@@ -25,13 +25,8 @@ const TableTeams = () => {
 			<table className={cls.myTable}>
 				<caption>{'Командный зачет'}</caption>
 				<TableThead points={points} />
-				<TableBody points={points} />
+				<TableBody isLoading={isLoading} points={points} />
 			</table>
-			{points.length === 0 ? (
-				<div style={{ display: 'flex', justifyContent: 'center' }}>{<Spinner />}</div>
-			) : (
-				''
-			)}
 		</div>
 	);
 };
