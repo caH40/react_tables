@@ -2,10 +2,16 @@ import React from 'react';
 import cls from '../Table.module.css';
 
 import { tdPointsTotal, tdPoints, tdTeam } from '../../../Utils/team';
+import Spinner from '../../UI/Spinner/Spinner';
 
-const TableBody = ({ points }) => {
+const TableBody = ({ points, isLoading }) => {
 	return (
 		<tbody>
+			<tr>
+				<td colSpan={8}>
+					<Spinner isLoading={isLoading} />
+				</td>
+			</tr>
 			{points.map((pointTeam, indexTeam) => {
 				return (
 					<tr key={indexTeam}>
