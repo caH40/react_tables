@@ -5,7 +5,7 @@ import { getPointsTeams } from '../../../api/points-teams';
 import TableBody from './TableBody';
 import TableThead from './TableThead';
 import cls from '../Table.module.css';
-import Spinner from '../../UI/Spin/Spin';
+import Spinner from '../../UI/Spinner/Spinner';
 import { postClick } from '../../../api/clicks';
 import { useTelegram } from '../../../hooks/useTelegram';
 

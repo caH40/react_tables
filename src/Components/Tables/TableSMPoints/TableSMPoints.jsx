@@ -7,7 +7,7 @@ import TableBody from './TableBody';
 import cls from '../Table.module.css';
 import { getPointsSM } from '../../../api/points-sm';
 import TheadPointsSM from './TheadPointsSM';
-import Spinner from '../../UI/Spin/Spin';
+import Spinner from '../../UI/Spinner/Spinner';
 import { postClick } from '../../../api/clicks';
 import { useTelegram } from '../../../hooks/useTelegram';
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { postClick } from '../../../api/clicks';
 import { getStatisticsRiders } from '../../../api/statistics-riders';
 import { useTelegram } from '../../../hooks/useTelegram';
-import Spinner from '../../UI/Spin/Spin';
+import Spinner from '../../UI/Spinner/Spinner';
 import cls from '../Table.module.css';
 import TableBody from './TableBody';
 

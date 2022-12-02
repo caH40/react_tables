@@ -7,7 +7,7 @@ import { getResults } from '../../../api/getResults';
 import TableBody from './TableBody';
 import cls from '../Table.module.css';
 import { titlesStage } from '../titles';
-import Spinner from '../../UI/Spin/Spin';
+import Spinner from '../../UI/Spinner/Spinner';
 import { useTelegram } from '../../../hooks/useTelegram';
 import { postClick } from '../../../api/clicks';
 

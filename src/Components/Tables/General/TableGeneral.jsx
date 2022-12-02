@@ -7,7 +7,7 @@ import TableBody from './TableBody';
 import cls from '../Table.module.css';
 import { titlesGeneral } from '../titles';
 import { getGeneral } from '../../../api/general-series';
-import Spinner from '../../UI/Spin/Spin';
+import Spinner from '../../UI/Spinner/Spinner';
 import { postClick } from '../../../api/clicks';
 import { useTelegram } from '../../../hooks/useTelegram';
 
