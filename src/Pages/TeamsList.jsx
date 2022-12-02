@@ -14,7 +14,7 @@ const TeamsList = () => {
 	useEffect(() => {
 		getTeams(setIsLoading).then(data => setTeams(data));
 		postClick(userId);
-	}, []);
+	}, [userId]);
 
 	return (
 		<div>
