@@ -15,6 +15,7 @@ import TableTeams from './Components/Tables/TableTeams/TableTeams';
 import TableStatStages from './Components/Tables/TableStatStages/TableStatStages';
 import TableStatRiders from './Components/Tables/TableStatRiders/TableStatRiders';
 import Feedback from './Pages/Feedback';
+import TeamsList from './Pages/TeamsList';
 
 function App() {
 	const { tg } = useTelegram();
@@ -38,6 +39,7 @@ function App() {
 				<Route path="statistics/riders/" element={<TableStatRiders />} />
 				<Route path="statistics/stages/" element={<TableStatStages />} />
 				<Route path="feedback/" element={<Feedback />} />
+				<Route path="teams/" element={<TeamsList />} />
 			</Routes>
 		</div>
 	);

@@ -6,6 +6,15 @@
 	box-sizing: border-box;
 }
 
+li {
+	list-style-type: none;
+}
+
+ul {
+	margin-left: 0;
+	padding-left: 0;
+}
+
 body {
 	font-family: 'Roboto', sans-serif;
 	margin: 0px 5px;
@@ -48,4 +57,39 @@ small {
 	border: 1px rgb(148, 148, 148) solid;
 	border-radius: 4px;
 	background: var(--tg-theme-secondary-bg-color);
+}
+.team__inner {
+	font-size: 15px;
+	padding: 5px;
+	margin: 8px 0px;
+	border-radius: 5px;
+	background: var(--tg-theme-secondary-bg-color);
+}
+
+.blockLogo {
+	margin: 5px 0;
+	display: flex;
+}
+.blockLogo__img {
+	width: 145px;
+	margin-right: 8px;
+}
+.logoTeamList {
+	border-radius: 5px;
+	width: 100%;
+	object-fit: cover;
+	object-position: center center;
+}
+
+.team__description {
+	text-align: justify;
+	margin: 5px 0;
+}
+.blockLogo__link {
+	text-decoration: none;
+	color: var(--tg-theme-text-color);
+}
+.blockLogo__link:hover {
+	color: rgb(56, 56, 252);
+	transition: 0.2s;
 }
