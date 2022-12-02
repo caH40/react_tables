@@ -9,15 +9,16 @@ import {
 	valueMax,
 	tdPenalty,
 } from '../../../Utils/table';
+import Spinner from '../../UI/Spinner/Spinner';
 
-const TableBody = ({ results, category }) => {
-	// let hasPenalty = false;
-	// results.forEach(result => {
-	// 	if (result.penalty.powerUp !== 0) hasPenalty = true;
-	// });
-
+const TableBody = ({ results, category, isLoading }) => {
 	return (
 		<tbody>
+			<tr>
+				<td colSpan={12}>
+					<Spinner isLoading={isLoading} />
+				</td>
+			</tr>
 			{results.map(result => {
 				return (
 					<tr key={result._id}>

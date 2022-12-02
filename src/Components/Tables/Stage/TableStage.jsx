@@ -7,19 +7,19 @@ import { getResults } from '../../../api/getResults';
 import TableBody from './TableBody';
 import cls from '../Table.module.css';
 import { titlesStage } from '../titles';
-import Spinner from '../../UI/Spinner/Spinner';
 import { useTelegram } from '../../../hooks/useTelegram';
 import { postClick } from '../../../api/clicks';
 
 const TableStage = () => {
 	const [results, setResults] = useState([]);
+	const [isLoading, setIsLoading] = useState(false);
 
 	const { userId } = useTelegram();
 	let { params } = useParams();
 	const category = params.slice(0, 1);
 
 	useEffect(() => {
-		getResults(params).then(data => setResults(data));
+		getResults(params, setIsLoading).then(data => setResults(data));
 		postClick(userId);
 	}, [params, userId]);
 
@@ -34,13 +34,8 @@ const TableStage = () => {
 						})}
 					</tr>
 				</thead>
-				<TableBody category={category} results={results} />
+				<TableBody isLoading={isLoading} category={category} results={results} />
 			</table>
-			{results.length === 0 ? (
-				<div style={{ display: 'flex', justifyContent: 'center' }}>{<Spinner />}</div>
-			) : (
-				''
-			)}
 		</div>
 	);
 };

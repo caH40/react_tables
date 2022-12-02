@@ -3,7 +3,7 @@ import { TailSpin } from 'react-loader-spinner';
 
 const Spinner = ({ isLoading }) => {
 	return isLoading ? (
-		<div style={{ display: 'flex', justifyContent: 'center', marginTop: '200px' }}>
+		<div style={{ display: 'flex', justifyContent: 'center', marginTop: '150px' }}>
 			<TailSpin
 				height="40"
 				width="40"
