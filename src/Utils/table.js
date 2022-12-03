@@ -37,6 +37,7 @@ export function tdLinkZP(zwiftRiderId) {
 }
 
 export function tdTime(time) {
+	if (time === 'DQ') return <span>DQ</span>;
 	return String(time).includes('.')
 		? [
 				time.split('.')[0],
