@@ -25,6 +25,16 @@ export function tdRider(name, imageSrc) {
 		</div>
 	);
 }
+export function tdLinkZP(zwiftRiderId) {
+	return (
+		<a
+			target="_blank"
+			rel="noreferrer"
+			href={`https://zwiftpower.com/profile.php?z=${zwiftRiderId}`}>
+			ZwiftPower
+		</a>
+	);
+}
 
 export function tdTime(time) {
 	return String(time).includes('.')

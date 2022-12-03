@@ -3,7 +3,7 @@ import React from 'react';
 import SelectSprintPoints from '../../UI/SelectPoints/SelectSprintPoints';
 import SelectMountainPoints from '../../UI/SelectPoints/SelectMountainPoints';
 import SelectCategory from '../../UI/SelectCategory/SelectCategory';
-import { tdRider, tdTime, valueMax } from '../../../Utils/table';
+import { tdLinkZP, tdRider, tdTime, valueMax } from '../../../Utils/table';
 import SelectPenalty from '../../UI/SelectPenalty/SelectPenalty';
 import Spinner from '../../UI/Spinner/Spinner';
 
@@ -80,11 +80,8 @@ const TableStageEditBody = ({ results, setPopup, setResults, isLoading }) => {
 						<td>{tdRider(result.name, result.imageSrc)}</td>
 						{selectSprint}
 						{selectMountain}
+						<td>{tdLinkZP(result.zwiftRiderId)}</td>
 						<td>{tdTime(result.time)}</td>
-						<td>
-							{/* <a href={`https://zwiftpower.com/profile.php?z=${result.zwiftRiderId}`}>ZwiftPower</a> */}
-							{`https://zwiftpower.com/profile.php?z=${result.zwiftRiderId}`}
-						</td>
 						<td>{valueMax(result.avgHeartRate, 'bpm')}</td>
 						<td>{valueMax(result.weightInGrams, 'kg')}</td>
 						<td>{valueMax(result.heightInCentimeters, 'cm')}</td>
