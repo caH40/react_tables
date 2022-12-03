@@ -24,6 +24,7 @@ const TableGeneral = () => {
 		postClick(userId);
 	}, [series, userId]);
 
+	general.forEach(r => console.log(r.name));
 	return (
 		<div>
 			<table className={cls.myTable}>

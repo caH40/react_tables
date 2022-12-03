@@ -13,6 +13,7 @@ export const titlesStage = [
 	'Penalty',
 ];
 export const titlesStageEdit = [
+	'DQ',
 	'Penalty',
 	'#',
 	'Category',
