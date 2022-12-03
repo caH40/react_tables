@@ -6,6 +6,7 @@ import SelectCategory from '../../UI/SelectCategory/SelectCategory';
 import { tdLinkZP, tdRider, tdTime, valueMax } from '../../../Utils/table';
 import SelectPenalty from '../../UI/SelectPenalty/SelectPenalty';
 import Spinner from '../../UI/Spinner/Spinner';
+import CheckboxDq from '../../UI/CheckboxDq/CheckboxDq';
 
 const TableStageEditBody = ({ results, setPopup, setResults, isLoading }) => {
 	return (
@@ -72,6 +73,9 @@ const TableStageEditBody = ({ results, setPopup, setResults, isLoading }) => {
 				));
 				return (
 					<tr key={result._id}>
+						<td>
+							<CheckboxDq result={result} results={results} setResults={setResults} />
+						</td>
 						<td>{penalty}</td>
 						<td>{result.placeAbsolute}</td>
 						<td>{category}</td>
