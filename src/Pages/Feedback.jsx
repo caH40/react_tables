@@ -8,11 +8,12 @@ const Feedback = () => {
 	const [feedbacks, setFeedbacks] = useState([]);
 	const [query, setQuery] = useState('');
 	const [post, setPost] = useState({});
+	const [isLoading, setIsLoading] = useState(false);
 
 	const { userId } = useTelegram();
 
 	useEffect(() => {
-		getFeedback().then(data => setFeedbacks(data));
+		getFeedback(setIsLoading).then(data => setFeedbacks(data));
 	}, []);
 
 	useEffect(() => {
@@ -26,17 +27,16 @@ const Feedback = () => {
 		<div className="form">
 			<div>
 				<h2>Обратная связь</h2>
-				{feedbacks.length === 0 ? (
-					<div style={{ display: 'flex', justifyContent: 'center' }}>{<Spinner />}</div>
-				) : (
-					''
-				)}
+				<Spinner isLoading={isLoading} />
 				{feedbacks.map((feedback, index) => {
 					return (
 						<div className="feedback" key={feedback._id}>
-							{index + 1}
-							{'. '}
-							{feedback.text}
+							<div className="feedback__text">
+								{index + 1}
+								{'. '}
+								{feedback.text}
+							</div>
+							<div className="feedback__date">{new Date(feedback.date).toLocaleString()}</div>
 						</div>
 					);
 				})}

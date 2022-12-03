@@ -19,6 +19,7 @@ export const titlesStageEdit = [
 	'Watt',
 	'W/kg',
 	'Rider',
+	'ZP',
 	'Time',
 	'Pulse',
 	'Weight',
