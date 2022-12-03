@@ -74,7 +74,12 @@ const TableStageEditBody = ({ results, setPopup, setResults, isLoading }) => {
 				return (
 					<tr key={result._id}>
 						<td>
-							<CheckboxDq result={result} results={results} setResults={setResults} />
+							<CheckboxDq
+								result={result}
+								results={results}
+								setResults={setResults}
+								setPopup={setPopup}
+							/>
 						</td>
 						<td>{penalty}</td>
 						<td>{result.placeAbsolute}</td>

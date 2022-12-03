@@ -15,5 +15,5 @@ export async function postDisqualification(isDisqualification, resultId, setIsLo
 		}
 	);
 	// setIsLoading(false);
-	return result.data.pointsMountain;
+	return result.data.message;
 }
