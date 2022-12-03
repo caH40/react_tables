@@ -81,6 +81,10 @@ const TableStageEditBody = ({ results, setPopup, setResults, isLoading }) => {
 						{selectSprint}
 						{selectMountain}
 						<td>{tdTime(result.time)}</td>
+						<td>
+							{/* <a href={`https://zwiftpower.com/profile.php?z=${result.zwiftRiderId}`}>ZwiftPower</a> */}
+							{`https://zwiftpower.com/profile.php?z=${result.zwiftRiderId}`}
+						</td>
 						<td>{valueMax(result.avgHeartRate, 'bpm')}</td>
 						<td>{valueMax(result.weightInGrams, 'kg')}</td>
 						<td>{valueMax(result.heightInCentimeters, 'cm')}</td>
