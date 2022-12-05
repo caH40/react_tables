@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import './App.css';
-import Home from './Components/Home';
+import Home from './Pages/Home';
 import SettingsNotice from './Pages/SettingsNotice';
 import TableStage from './Components/Tables/Stage/TableStage';
 
