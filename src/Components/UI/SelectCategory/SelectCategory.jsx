@@ -1,7 +1,16 @@
 import React from 'react';
 import { postStageEdit } from '../../../api/stage-edit';
 
-const SelectCategory = ({ defaultValue, zwiftId, stageId, setPopup, results, setResults }) => {
+const SelectCategory = ({
+	defaultValue,
+	zwiftId,
+	stageId,
+	setPopup,
+	results,
+	setResults,
+	telegramId,
+	password,
+}) => {
 	const color = { A: '#dc4119', B: '#58c34e', C: '#3ec0e9', W: '#9422ae' };
 
 	const changeCategory = e => {
@@ -14,7 +23,7 @@ const SelectCategory = ({ defaultValue, zwiftId, stageId, setPopup, results, set
 		});
 		setResults(r);
 
-		postStageEdit(newCategory, zwiftId, stageId).then(data => setPopup(data));
+		postStageEdit(newCategory, zwiftId, telegramId, stageId, password).then(data => setPopup(data));
 	};
 
 	return (

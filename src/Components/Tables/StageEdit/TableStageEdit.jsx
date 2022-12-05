@@ -9,7 +9,7 @@ import classes from '../Table.module.css';
 import { titlesStageEdit } from '../titles';
 import { useTelegram } from '../../../hooks/useTelegram';
 
-const TableStageEdit = () => {
+const TableStageEdit = ({ password, telegramId }) => {
 	const [results, setResults] = useState([]);
 	const [popup, setPopup] = useState('');
 	const [isLoading, setIsLoading] = useState(false);
@@ -55,6 +55,8 @@ const TableStageEdit = () => {
 					setPopup={setPopup}
 					results={results}
 					setResults={setResults}
+					telegramId={telegramId}
+					password={password}
 				/>
 			</table>
 		</div>

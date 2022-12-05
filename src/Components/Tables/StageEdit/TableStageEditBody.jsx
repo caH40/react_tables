@@ -8,7 +8,7 @@ import SelectPenalty from '../../UI/SelectPenalty/SelectPenalty';
 import Spinner from '../../UI/Spinner/Spinner';
 import CheckboxDq from '../../UI/CheckboxDq/CheckboxDq';
 
-const TableStageEditBody = ({ results, setPopup, setResults, isLoading }) => {
+const TableStageEditBody = ({ results, setPopup, setResults, isLoading, telegramId, password }) => {
 	return (
 		<tbody>
 			<tr>
@@ -28,6 +28,8 @@ const TableStageEditBody = ({ results, setPopup, setResults, isLoading }) => {
 								stageId={result.stageId}
 								defaultValue={result.category}
 								key={result._id}
+								telegramId={telegramId}
+								password={password}
 							/>
 						}
 					</div>
