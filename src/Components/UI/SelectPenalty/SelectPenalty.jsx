@@ -2,7 +2,16 @@ import React from 'react';
 import { postStagePenalty } from '../../../api/stage-penalty';
 import cls from './SelectPenalty.module.css';
 
-const SelectPenalty = ({ result, defaultValue, zwiftId, setPopup, results, setResults }) => {
+const SelectPenalty = ({
+	result,
+	defaultValue,
+	zwiftId,
+	setPopup,
+	results,
+	setResults,
+	telegramId,
+	password,
+}) => {
 	const changePenalty = e => {
 		const newPenalty = Number(e.target.value);
 
@@ -13,7 +22,7 @@ const SelectPenalty = ({ result, defaultValue, zwiftId, setPopup, results, setRe
 		});
 		setResults(resultsChanged);
 
-		postStagePenalty(newPenalty, result._id).then(data => setPopup(data));
+		postStagePenalty(newPenalty, result._id, telegramId, password).then(data => setPopup(data));
 	};
 
 	return (

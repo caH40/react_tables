@@ -45,6 +45,8 @@ const TableStageEditBody = ({ results, setPopup, setResults, isLoading, telegram
 								zwiftId={result.zwiftRiderId}
 								defaultValue={result.penalty.powerUp}
 								key={result._id}
+								telegramId={telegramId}
+								password={password}
 							/>
 						}
 					</div>
@@ -58,6 +60,8 @@ const TableStageEditBody = ({ results, setPopup, setResults, isLoading, telegram
 							results={results}
 							setResults={setResults}
 							setPopup={setPopup}
+							telegramId={telegramId}
+							password={password}
 						/>
 					</td>
 				));
@@ -70,6 +74,8 @@ const TableStageEditBody = ({ results, setPopup, setResults, isLoading, telegram
 							results={results}
 							setResults={setResults}
 							setPopup={setPopup}
+							telegramId={telegramId}
+							password={password}
 						/>
 					</td>
 				));
@@ -81,6 +87,8 @@ const TableStageEditBody = ({ results, setPopup, setResults, isLoading, telegram
 								results={results}
 								setResults={setResults}
 								setPopup={setPopup}
+								telegramId={telegramId}
+								password={password}
 							/>
 						</td>
 						<td>{penalty}</td>
