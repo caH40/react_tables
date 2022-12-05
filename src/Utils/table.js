@@ -52,7 +52,10 @@ export function tdPlace(result, category) {
 	return category === 'T' ? result.placeAbsolute : result.placeCategory;
 }
 export function tdCategory(result) {
-	return <div className={`${cls.category} ${cls[result.category]}`}>{result.category}</div>;
+	let newCategory = result.category;
+	if (result.category.includes('WA') || result.category.includes('WB'))
+		newCategory = result.category.slice(1);
+	return <div className={`${cls.category} ${cls[result.category]}`}>{newCategory}</div>;
 }
 export function tdGap(gap) {
 	return <div className={cls.gap}>{gap ? ['+', gap] : ''}</div>;
