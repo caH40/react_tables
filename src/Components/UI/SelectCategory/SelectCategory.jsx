@@ -23,7 +23,7 @@ const SelectCategory = ({
 		});
 		setResults(r);
 
-		postStageEdit(newCategory, zwiftId, telegramId, stageId, password).then(data => setPopup(data));
+		postStageEdit(newCategory, zwiftId, stageId, telegramId, password).then(data => setPopup(data));
 	};
 
 	return (
