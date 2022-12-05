@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { serverExpress } from '../config';
+const serverExpress = process.env.REACT_APP_SERVER_EXPRESS;
 
 export async function getPointsTeams(seriesId, setIsLoading) {
 	setIsLoading(true);

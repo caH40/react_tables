@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { serverExpress } from '../config';
+const serverExpress = process.env.REACT_APP_SERVER_EXPRESS;
 
 export async function postSprintPoints(nameElement, name, place, resultId) {
 	const response = await axios.post(
