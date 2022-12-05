@@ -8,7 +8,7 @@ import SelectPenalty from '../../UI/SelectPenalty/SelectPenalty';
 import Spinner from '../../UI/Spinner/Spinner';
 import CheckboxDq from '../../UI/CheckboxDq/CheckboxDq';
 
-const TableStageEditBody = ({ results, setPopup, setResults, isLoading }) => {
+const TableStageEditBody = ({ results, setPopup, setResults, isLoading, telegramId, password }) => {
 	return (
 		<tbody>
 			<tr>
@@ -28,6 +28,8 @@ const TableStageEditBody = ({ results, setPopup, setResults, isLoading }) => {
 								stageId={result.stageId}
 								defaultValue={result.category}
 								key={result._id}
+								telegramId={telegramId}
+								password={password}
 							/>
 						}
 					</div>
@@ -43,6 +45,8 @@ const TableStageEditBody = ({ results, setPopup, setResults, isLoading }) => {
 								zwiftId={result.zwiftRiderId}
 								defaultValue={result.penalty.powerUp}
 								key={result._id}
+								telegramId={telegramId}
+								password={password}
 							/>
 						}
 					</div>
@@ -56,6 +60,8 @@ const TableStageEditBody = ({ results, setPopup, setResults, isLoading }) => {
 							results={results}
 							setResults={setResults}
 							setPopup={setPopup}
+							telegramId={telegramId}
+							password={password}
 						/>
 					</td>
 				));
@@ -68,6 +74,8 @@ const TableStageEditBody = ({ results, setPopup, setResults, isLoading }) => {
 							results={results}
 							setResults={setResults}
 							setPopup={setPopup}
+							telegramId={telegramId}
+							password={password}
 						/>
 					</td>
 				));
@@ -79,6 +87,8 @@ const TableStageEditBody = ({ results, setPopup, setResults, isLoading }) => {
 								results={results}
 								setResults={setResults}
 								setPopup={setPopup}
+								telegramId={telegramId}
+								password={password}
 							/>
 						</td>
 						<td>{penalty}</td>

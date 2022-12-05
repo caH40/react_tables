@@ -2,7 +2,16 @@ import React from 'react';
 import { postSprintPoints } from '../../../api/stage-poinst';
 import { sprintTable } from '../../../Utils/pointsTable';
 
-const SelectSprintPoints = ({ name, index, result, results, setResults, setPopup }) => {
+const SelectSprintPoints = ({
+	name,
+	index,
+	result,
+	results,
+	setResults,
+	setPopup,
+	telegramId,
+	password,
+}) => {
 	const changePlace = e => {
 		const tempResults = [...results];
 
@@ -11,8 +20,8 @@ const SelectSprintPoints = ({ name, index, result, results, setResults, setPopup
 				result.pointsSprint[index].place = e.target.value;
 		});
 		setResults(tempResults);
-		postSprintPoints('pointsSprint', name, e.target.value, result._id).then(message =>
-			setPopup(message)
+		postSprintPoints('pointsSprint', name, e.target.value, result._id, telegramId, password).then(
+			message => setPopup(message)
 		);
 	};
 

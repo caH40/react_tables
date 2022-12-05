@@ -1,7 +1,7 @@
 import React from 'react';
 import { postDisqualification } from '../../../api/disqualification';
 
-const CheckboxDq = ({ result, results, setResults, setPopup }) => {
+const CheckboxDq = ({ result, results, setResults, setPopup, telegramId, password }) => {
 	const changedBox = e => {
 		const tempResults = [...results];
 		tempResults.forEach(elm => {
@@ -10,7 +10,9 @@ const CheckboxDq = ({ result, results, setResults, setPopup }) => {
 			}
 		});
 		setResults(tempResults);
-		postDisqualification(result.isDisqualification, result._id).then(data => setPopup(data));
+		postDisqualification(result.isDisqualification, result._id, telegramId, password).then(data =>
+			setPopup(data)
+		);
 	};
 	return (
 		<div>
