@@ -1,13 +1,14 @@
-import React from 'react'
+import React from 'react';
 
 const Page404 = () => {
 	return (
-		<section
-			className='main'
-			style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-			<h3 style={{ color: 'red' }}>Страница не найдена!</h3>
+		<section className="page-404__bg">
+			<div className="page-404__title">
+				<p className="page-404__error">Ошибка 404</p>
+				<p className="page-404__error-text">Страница не найдена</p>
+			</div>
 		</section>
-	)
-}
+	);
+};
 
-export default Page404
+export default Page404;
