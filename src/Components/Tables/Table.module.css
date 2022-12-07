@@ -41,10 +41,6 @@
 	color: var(--tg-theme-button-text-color);
 	transition: all 0.2s;
 }
-.category {
-	display: flex;
-}
-
 .rider {
 	display: flex;
 	align-items: center;
@@ -88,6 +84,15 @@
 	height: 24px;
 	border-radius: 50%;
 	font-weight: bold;
+}
+.categoryBox {
+	display: flex;
+	align-items: center;
+}
+.underChecking {
+	font-size: 19px;
+	margin-left: 5px;
+	padding-top: 2px;
 }
 .dq {
 	display: flex;
