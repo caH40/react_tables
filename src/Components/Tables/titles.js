@@ -13,15 +13,16 @@ export const titlesStage = [
 	'Penalty',
 ];
 export const titlesStageEdit = [
-	'DQ',
+	'Up',
 	'Penalty',
 	'#',
-	'Category',
+	'Cat',
 	'Watt',
 	'W/kg',
 	'Rider',
 	'ZP',
 	'Time',
+	'DQ',
 	'Pulse',
 	'Weight',
 	'Height',
