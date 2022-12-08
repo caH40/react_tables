@@ -18,6 +18,7 @@ const TableGeneral = () => {
 	let { series } = useParams();
 
 	const category = series.slice(0, 1);
+	const categoryCurrent = series.slice(0, 2);
 
 	useEffect(() => {
 		getGeneral(series, setIsLoading).then(data => setGeneral(data));
@@ -27,7 +28,10 @@ const TableGeneral = () => {
 	return (
 		<div>
 			<table className={cls.myTable}>
-				<caption>Генеральный зачёт! Группа "{general[0]?.category}"</caption>
+				<caption>
+					Генеральный зачёт! Группа "
+					{categoryCurrent === 'WT' ? 'W Командный зачет' : general[0]?.category}"
+				</caption>
 				<thead>
 					<tr>
 						{titlesGeneral.map(thTitle => {
