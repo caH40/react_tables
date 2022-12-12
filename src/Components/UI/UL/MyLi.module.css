@@ -1,0 +1,28 @@
+.item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.labelItem {
+	margin-right: 10px;
+	font-weight: 600;
+}
+.valueItemInput {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	letter-spacing: 0.08em;
+	color: #000000;
+	margin: 2px;
+	padding: 0.1rem 0.3rem;
+	color: #495057;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	border-radius: 0.25rem;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.valueItemInput:disabled {
+	background: #9797975e;
+}

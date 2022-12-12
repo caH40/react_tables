@@ -8,14 +8,19 @@ import TableStageEditBody from './TableStageEditBody';
 import classes from '../Table.module.css';
 import { titlesStageEdit } from '../titles';
 import { useTelegram } from '../../../hooks/useTelegram';
+import { getRiders } from '../../../api/riders';
+import Button from '../../UI/Button/Button';
+import AddResult from '../../AddResult/AddResult';
 
 const TableStageEdit = ({ password, telegramId }) => {
 	const [results, setResults] = useState([]);
 	const [popup, setPopup] = useState('');
 	const [isLoading, setIsLoading] = useState(false);
+	const [riders, setRiders] = useState([]);
+	const [modal, setModal] = useState(false);
 
 	const { params } = useParams();
-	const { showPopup } = useTelegram();
+	const { showPopup, userId } = useTelegram();
 
 	useEffect(() => {
 		getResults(params, setIsLoading).then(data => {
@@ -31,6 +36,10 @@ const TableStageEdit = ({ password, telegramId }) => {
 		});
 	}, []);
 
+	useEffect(() => {
+		getRiders('412801722', setIsLoading).then(data => setRiders(data));
+	}, []);
+
 	useMemo(() => {
 		if (popup)
 			showPopup(
@@ -41,6 +50,9 @@ const TableStageEdit = ({ password, telegramId }) => {
 
 	return (
 		<div>
+			<h3>Ручное добавление результатов</h3>
+			<Button sendForm={() => setModal(true)}>Добавить</Button>
+			{modal ? <AddResult riders={riders} stageId={params.slice(1)} setModal={setModal} /> : ''}
 			<table className={classes.myTable}>
 				<caption>{results[0]?.title}</caption>
 				<thead>
