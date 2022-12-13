@@ -20,19 +20,25 @@ const SelectMountainPoints = ({
 				result.pointsMountain[index].place = e.target.value;
 		});
 		setResults(tempResults);
-		postSprintPoints('pointsMountain', name, e.target.value, result._id, telegramId, password).then(
-			message => setPopup(message)
-		);
+		postSprintPoints(
+			'pointsMountain',
+			name,
+			e.target.value,
+			result._id,
+			telegramId,
+			password
+		).then(message => setPopup(message));
 	};
 
 	return (
 		<select
 			style={{
-				background: result.pointsMountain[index].place === 'none' ? '#ffffff' : '#dc4119',
+				background: result.pointsMountain[index]?.place === 'none' ? '#ffffff' : '#dc4119',
 			}}
 			onChange={changePlace}
 			size="1"
-			defaultValue={result.pointsMountain[index].place}>
+			defaultValue={result.pointsMountain[index]?.place}
+		>
 			{mountainTable.map(elm => {
 				return <option value={elm.place} label={elm.place} key={elm.place} />;
 			})}

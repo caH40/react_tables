@@ -51,7 +51,7 @@ const AddResult = ({ riders, stageId, setModal, setPopup }) => {
 			name: `${rider.firstNameZwift} ${rider.lastNameZwift}`,
 			zwiftId: rider.zwiftId,
 			riderId: rider._id,
-			teamCurrent: rider.teamId._id,
+			teamCurrent: rider.teamId?._id,
 		}));
 	};
 
