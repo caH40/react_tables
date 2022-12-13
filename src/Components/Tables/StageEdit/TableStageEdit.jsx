@@ -70,7 +70,16 @@ const TableStageEdit = ({ password, telegramId }) => {
 					password={password}
 				/>
 			</table>
-			{modal ? <AddResult riders={riders} stageId={params.slice(1)} setModal={setModal} /> : ''}
+			{modal ? (
+				<AddResult
+					riders={riders}
+					stageId={params.slice(1)}
+					setPopup={setPopup}
+					setModal={setModal}
+				/>
+			) : (
+				''
+			)}
 		</div>
 	);
 };

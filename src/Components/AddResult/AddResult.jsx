@@ -5,7 +5,7 @@ import Button from '../UI/Button/Button';
 import MyLi from '../UI/UL/MyLi';
 import cls from './AddResult.module.css';
 
-const AddResult = ({ riders, stageId, setModal }) => {
+const AddResult = ({ riders, stageId, setModal, setPopup }) => {
 	const [filteredRiders, setFilteredRiders] = useState([]);
 	const [queryRider, setQueryRider] = useState('');
 	const [selectedRider, setSelectedRider] = useState({});
@@ -54,6 +54,7 @@ const AddResult = ({ riders, stageId, setModal }) => {
 			teamCurrent: rider.teamId,
 		}));
 	};
+
 	const sendForm = () => {
 		setModal(false);
 		postNewResult({
@@ -64,7 +65,7 @@ const AddResult = ({ riders, stageId, setModal }) => {
 				) / 100,
 			category: newResult.category.toUpperCase(),
 			categoryCurrent: newResult.categoryCurrent.toUpperCase(),
-		});
+		}).then(data => setPopup(data));
 	};
 
 	return (
