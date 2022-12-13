@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { postNewResult } from '../../api/result-add';
 import Button from '../UI/Button/Button';
+import ButtonClose from '../UI/ButtonClose/ButtonClose';
 
 import MyLi from '../UI/UL/MyLi';
 import cls from './AddResult.module.css';
@@ -72,6 +73,7 @@ const AddResult = ({ riders, stageId, setModal, setPopup }) => {
 		<div className={cls.modal}>
 			<div className={cls.container}>
 				<div className={cls.block}>
+					<ButtonClose setModal={setModal} />
 					{content ? (
 						<div className={cls.box__findRider}>
 							<label htmlFor="searchRider">Введите фамилию или имя райдера</label>
