@@ -34,11 +34,11 @@ const TableStageEdit = ({ password, telegramId }) => {
 			});
 			setResults(data);
 		});
-	}, []);
+	}, [params]);
 
 	useEffect(() => {
-		getRiders('412801722', setIsLoading).then(data => setRiders(data));
-	}, []);
+		getRiders(userId, setIsLoading).then(data => setRiders(data));
+	}, [userId]);
 
 	useMemo(() => {
 		if (popup)
