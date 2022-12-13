@@ -20,5 +20,13 @@ export function useAuth() {
 		e.preventDefault();
 		setAuth(query);
 	};
+	//FIXME: for dev
+	// return {
+	// 	query,
+	// 	setQuery,
+	// 	userId: 412801722,
+	// 	getHashPassword,
+	// 	password: '$2b$10$XJmD7pf4lh7WLowTlJ92o.tiMB7.kWx0SItRWLe2X/MIvhY5qTQGm',
+	// };
 	return { query, setQuery, userId, getHashPassword, password };
 }

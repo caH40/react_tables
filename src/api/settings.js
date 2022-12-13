@@ -13,6 +13,5 @@ export async function postSettings(settings) {
 		'Content-type': 'application/json',
 	});
 
-	console.log(result.data.response);
 	return result.data.response;
 }

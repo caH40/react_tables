@@ -27,7 +27,11 @@ export function tdRider(name, imageSrc) {
 }
 export function tdLinkZP(zwiftRiderId) {
 	return (
-		<a target="_blank" rel="noreferrer" href={`https://zwiftpower.com/profile.php?z=${zwiftRiderId}`}>
+		<a
+			target="_blank"
+			rel="noreferrer"
+			href={`https://zwiftpower.com/profile.php?z=${zwiftRiderId}`}
+		>
 			ZwiftPower
 		</a>
 	);
@@ -35,6 +39,7 @@ export function tdLinkZP(zwiftRiderId) {
 
 export function tdTime(time) {
 	if (time === 'DQ') return <div className={cls.dq}>DQ</div>;
+	if (time === 'DNF') return <div className={cls.dq}>DNF</div>;
 	return String(time).includes('.')
 		? [
 				time.split('.')[0],

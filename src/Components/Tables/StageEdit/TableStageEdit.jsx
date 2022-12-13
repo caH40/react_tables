@@ -8,14 +8,19 @@ import TableStageEditBody from './TableStageEditBody';
 import classes from '../Table.module.css';
 import { titlesStageEdit } from '../titles';
 import { useTelegram } from '../../../hooks/useTelegram';
+import { getRiders } from '../../../api/riders';
+import Button from '../../UI/Button/Button';
+import AddResult from '../../AddResult/AddResult';
 
 const TableStageEdit = ({ password, telegramId }) => {
 	const [results, setResults] = useState([]);
 	const [popup, setPopup] = useState('');
 	const [isLoading, setIsLoading] = useState(false);
+	const [riders, setRiders] = useState([]);
+	const [modal, setModal] = useState(false);
 
 	const { params } = useParams();
-	const { showPopup } = useTelegram();
+	const { showPopup, userId } = useTelegram();
 
 	useEffect(() => {
 		getResults(params, setIsLoading).then(data => {
@@ -29,7 +34,12 @@ const TableStageEdit = ({ password, telegramId }) => {
 			});
 			setResults(data);
 		});
-	}, []);
+	}, [params]);
+
+	useEffect(() => {
+		getRiders(userId, setIsLoading).then(data => setRiders(data));
+		// getRiders('userId', setIsLoading).then(data => setRiders(data));
+	}, [userId]);
 
 	useMemo(() => {
 		if (popup)
@@ -41,6 +51,8 @@ const TableStageEdit = ({ password, telegramId }) => {
 
 	return (
 		<div>
+			<h3>Добавить результат</h3>
+			<Button sendForm={() => setModal(true)}>Добавить</Button>
 			<table className={classes.myTable}>
 				<caption>{results[0]?.title}</caption>
 				<thead>
@@ -59,6 +71,16 @@ const TableStageEdit = ({ password, telegramId }) => {
 					password={password}
 				/>
 			</table>
+			{modal ? (
+				<AddResult
+					riders={riders}
+					stageId={params.slice(1)}
+					setPopup={setPopup}
+					setModal={setModal}
+				/>
+			) : (
+				''
+			)}
 		</div>
 	);
 };

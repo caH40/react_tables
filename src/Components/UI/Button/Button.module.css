@@ -1,5 +1,6 @@
 .myBtn {
-	display: block;
+	font-size: 14px;
+	display: inline-block;
 	margin: 5px 0px;
 	padding: 10px 15px;
 	background: var(--tg-theme-button-color);
