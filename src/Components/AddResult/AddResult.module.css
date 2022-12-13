@@ -27,11 +27,7 @@
 	color: #000000;
 	position: relative;
 }
-.box__findRider {
-	/* display: flex;
-	justify-content: space-between;
-	align-items: center; */
-}
+
 .box__findRider label {
 	display: block;
 }
@@ -60,6 +56,4 @@
 }
 .rider:active {
 	opacity: 0.8;
-}
-.box__formRider {
 }
