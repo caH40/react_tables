@@ -23,6 +23,7 @@ const AddResult = ({ riders, stageId, setModal }) => {
 		category: 'C',
 		categoryCurrent: 'C',
 		imageSrc: '',
+		gender: 'мужской',
 		DNF: 'нет',
 	});
 
@@ -49,6 +50,8 @@ const AddResult = ({ riders, stageId, setModal }) => {
 			...prev,
 			name: `${rider.firstNameZwift} ${rider.lastNameZwift}`,
 			zwiftId: rider.zwiftId,
+			riderId: rider._id,
+			teamCurrent: rider.teamId,
 		}));
 	};
 	const sendForm = () => {
@@ -62,15 +65,6 @@ const AddResult = ({ riders, stageId, setModal }) => {
 			category: newResult.category.toUpperCase(),
 			categoryCurrent: newResult.categoryCurrent.toUpperCase(),
 		});
-		// console.log({
-		// 	...newResult,
-		// 	wattPerKg:
-		// 		Math.round(
-		// 			newResult.watt / ((newResult.weightInGrams !== 0 ? newResult.weightInGrams : 1) / 100000)
-		// 		) / 100,
-		// 	category: newResult.category.toUpperCase(),
-		// 	categoryCurrent: newResult.categoryCurrent.toUpperCase(),
-		// });
 	};
 
 	return (
@@ -178,6 +172,13 @@ const AddResult = ({ riders, stageId, setModal }) => {
 									setNewResult={setNewResult}
 									label="imageSrc"
 									variable="imageSrc"
+									type="text"
+								/>
+								<MyLi
+									newResult={newResult}
+									setNewResult={setNewResult}
+									label="Пол (женский)"
+									variable="gender"
 									type="text"
 								/>
 								<MyLi

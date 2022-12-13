@@ -50,9 +50,8 @@ const TableStageEdit = ({ password, telegramId }) => {
 
 	return (
 		<div>
-			<h3>Ручное добавление результатов</h3>
+			<h3>Добавить результат</h3>
 			<Button sendForm={() => setModal(true)}>Добавить</Button>
-			{modal ? <AddResult riders={riders} stageId={params.slice(1)} setModal={setModal} /> : ''}
 			<table className={classes.myTable}>
 				<caption>{results[0]?.title}</caption>
 				<thead>
@@ -71,6 +70,7 @@ const TableStageEdit = ({ password, telegramId }) => {
 					password={password}
 				/>
 			</table>
+			{modal ? <AddResult riders={riders} stageId={params.slice(1)} setModal={setModal} /> : ''}
 		</div>
 	);
 };
