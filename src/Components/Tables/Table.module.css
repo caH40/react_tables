@@ -50,6 +50,7 @@
 	height: 30px;
 	border-radius: 50%;
 	margin-right: 5px;
+	flex-shrink: 0;
 }
 .logoTeam {
 	width: 50px;
