@@ -147,3 +147,6 @@
 .tdRiderStage {
 	text-align: left;
 }
+.trLink {
+	cursor: pointer;
+}

@@ -21,3 +21,14 @@ export function tdPoints(pointTeam) {
 		</td>
 	));
 }
+export function tdPointsRiders(riders) {
+	return riders.stages.map((point, index) => {
+		return point.stageNumber === index + 1 ? (
+			<td className={cls.tdPointsStage} key={index}>
+				<span>{point.points}</span>
+			</td>
+		) : (
+			''
+		);
+	});
+}
