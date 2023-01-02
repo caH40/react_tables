@@ -18,7 +18,7 @@ const TableGeneralTour = () => {
 	let { series } = useParams();
 
 	const category = series.slice(0, 1);
-
+	console.log(results);
 	useEffect(() => {
 		getResults(series, setIsLoading).then(data => setResults(data));
 		postClick(userId);
@@ -27,7 +27,9 @@ const TableGeneralTour = () => {
 	return (
 		<div>
 			<table className={cls.myTable}>
-				<caption>{results[0]?.title}</caption>
+				<caption>
+					{results[0]?.seriesName}, Категория: "{category}"
+				</caption>
 				<thead>
 					<tr>
 						{titlesGeneralTour.map(thTitle => {
