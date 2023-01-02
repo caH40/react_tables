@@ -26,7 +26,7 @@ const TableStageEdit = ({ password, telegramId }) => {
 		getResults(params, setIsLoading).then(data => {
 			const quantitySprints = data[0]?.pointsSprint.map(elm => 'sprint' + elm.sprint);
 			const quantityMountains = data[0]?.pointsMountain.map(elm => 'mountain' + elm.mountain);
-			titlesStageEdit.splice(5, 0, ...quantitySprints, ...quantityMountains);
+			titlesStageEdit.splice(7, 0, ...quantitySprints, ...quantityMountains);
 
 			data.forEach(result => {
 				result.quantitySprints = quantitySprints;
