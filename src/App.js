@@ -17,6 +17,7 @@ import TableStatRiders from './Components/Tables/TableStatRiders/TableStatRiders
 import Feedback from './Pages/Feedback';
 import TeamsList from './Pages/TeamsList';
 import RidersList from './Pages/RidersList';
+import TableGeneralTour from './Components/Tables/GeneralTour/TableGeneralTour';
 
 function App() {
 	const { tg } = useTelegram();
@@ -33,6 +34,7 @@ function App() {
 				<Route path="settings/notice/:telegramId" element={<SettingsNotice />} />
 				<Route path="results/stage/:params" element={<TableStage />} />
 				<Route path="results/general/:series" element={<TableGeneral />} />
+				<Route path="results/general-tour/:series" element={<TableGeneralTour />} />
 				<Route path="results/mountain/:series" element={<TableSMPoints />} />
 				<Route path="results/sprint/:series" element={<TableSMPoints />} />
 				<Route path="results/teams/:series" element={<TableTeams />} />
