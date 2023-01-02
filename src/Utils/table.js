@@ -50,6 +50,14 @@ export function tdTime(time) {
 		: time;
 }
 
+export function tdTimeTour(result) {
+	return result.time.map((timeStage, timeStageIndex) => (
+		<td key={timeStageIndex}>
+			<span className={cls.thousandthsSecond}>{timeStage.timeStage}</span>
+		</td>
+	));
+}
+
 export function tdPlace(result, category) {
 	return category === 'T' ? result.placeAbsolute : result.placeCategory;
 }

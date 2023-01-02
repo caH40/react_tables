@@ -38,5 +38,18 @@ export const titlesGeneral = [
 	'St.5',
 	'St.6',
 ];
+export const titlesGeneralTour = [
+	'#',
+	'Rider',
+	'Total',
+	'Gap',
+	'GapP',
+	'St.1 (mc)',
+	'St.2 (mc)',
+	'St.3 (mc)',
+	'St.4 (mc)',
+	'St.5 (mc)',
+	'St.6 (mc)',
+];
 
 export const titlesSMPoints = ['#', 'Rider', 'Total', 'St.2', 'St.2', 'St.5', 'St.5'];
