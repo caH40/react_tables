@@ -18,7 +18,7 @@ const TableGeneralTour = () => {
 	let { series } = useParams();
 
 	const category = series.slice(0, 1);
-	console.log(results);
+
 	useEffect(() => {
 		getResults(series, setIsLoading).then(data => setResults(data));
 		postClick(userId);
