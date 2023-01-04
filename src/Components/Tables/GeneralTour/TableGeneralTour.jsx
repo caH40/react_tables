@@ -17,7 +17,12 @@ const TableGeneralTour = () => {
 	const { userId } = useTelegram();
 	let { series } = useParams();
 
-	const category = series.slice(0, 1);
+	let category = '';
+	if (series.includes('WA') || series.includes('WB')) {
+		category = series.slice(0, 2);
+	} else {
+		category = series.slice(0, 1);
+	}
 
 	useEffect(() => {
 		getResults(series, setIsLoading).then(data => setResults(data));
