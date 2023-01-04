@@ -1,7 +1,7 @@
 import React from 'react';
 import Discipline from './Discipline';
 
-const TheadPointsSM = ({ points, typePoints }) => {
+const TheadPointsSM = ({ points, typePoints = 'S' }) => {
 	return (
 		<thead>
 			<tr>
@@ -11,7 +11,10 @@ const TheadPointsSM = ({ points, typePoints }) => {
 
 				{points[0]?.stages.map((stage, index) => {
 					return (
-						<th colSpan={points[0]?.stages.length} key={index}>
+						<th
+							colSpan={typePoints === 'M' ? stage.quantityMountains : stage.quantitySprints}
+							key={index}
+						>
 							<span>Stage{stage.number}</span>
 						</th>
 					);
