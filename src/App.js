@@ -18,6 +18,7 @@ import Feedback from './Pages/Feedback';
 import TeamsList from './Pages/TeamsList';
 import RidersList from './Pages/RidersList';
 import TableGeneralTour from './Components/Tables/GeneralTour/TableGeneralTour';
+import Profile from './Pages/Profile';
 
 function App() {
 	const { tg } = useTelegram();
@@ -44,6 +45,7 @@ function App() {
 				<Route path="feedback/" element={<Feedback />} />
 				<Route path="teams/" element={<TeamsList />} />
 				<Route path="riders/" element={<RidersList />} />
+				<Route path="profile/:zwiftId" element={<Profile />} />
 			</Routes>
 		</div>
 	);

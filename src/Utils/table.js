@@ -58,7 +58,7 @@ export function tdTimeTour(result) {
 	));
 }
 
-export function tdPlace(result, category) {
+export function tdPlace(result, category = 'T') {
 	return category === 'T' ? result.placeAbsolute : result.placeCategory;
 }
 export function tdCategory(result) {
@@ -72,9 +72,11 @@ export function tdCategory(result) {
 		</div>
 	);
 }
+
 export function tdGap(gap) {
 	return <div className={cls.gap}>{gap ? ['+', gap] : ''}</div>;
 }
+
 export function tdPenalty(penalty, key) {
 	return (
 		<div>
@@ -83,6 +85,33 @@ export function tdPenalty(penalty, key) {
 			) : (
 				<span></span>
 			)}
+		</div>
+	);
+}
+
+export function tdDate(date) {
+	if (!date) return <div></div>;
+	let dateArr = new Date(date).toLocaleDateString().split('.');
+	dateArr[2] = dateArr[2]?.slice(2);
+	date = dateArr.join('.');
+	return (
+		<div className={cls.tdNameStage}>
+			<span>{date}</span>
+		</div>
+	);
+}
+
+export function tdSeries(name) {
+	return (
+		<div className={cls.tdNameStage}>
+			<span>{name}</span>
+		</div>
+	);
+}
+export function tdDNF(isTrue) {
+	return (
+		<div>
+			<span>{isTrue ? 'Yes' : ''}</span>
 		</div>
 	);
 }

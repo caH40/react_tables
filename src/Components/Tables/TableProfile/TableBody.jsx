@@ -1,23 +1,18 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import {
-	tdPlace,
 	tdCategory,
-	tdGap,
-	tdRider,
+	tdDate,
+	tdDNF,
+	tdPenalty,
+	tdPlace,
+	tdSeries,
 	tdTime,
 	valueMax,
-	tdPenalty,
 } from '../../../Utils/table';
 import Spinner from '../../UI/Spinner/Spinner';
 
-const TableBody = ({ results, category, isLoading }) => {
-	const navigate = useNavigate();
-	const toProfile = zwiftId => {
-		navigate(`/profile/${zwiftId}`);
-	};
-
+const TableBody = ({ profile, category, isLoading }) => {
 	return (
 		<tbody>
 			<tr>
@@ -25,25 +20,23 @@ const TableBody = ({ results, category, isLoading }) => {
 					<Spinner isLoading={isLoading} />
 				</td>
 			</tr>
-			{results.map(result => {
+			{profile.map(result => {
 				return (
-					<tr
-						key={result._id}
-						onClick={() => toProfile(result.zwiftRiderId)}
-						style={{ cursor: 'pointer' }}
-					>
+					<tr key={result._id}>
 						<td>{tdCategory(result, category)}</td>
 						<td>{tdPlace(result, category)}</td>
-						<td>{tdRider(result.name, result.imageSrc)}</td>
+						<td>{tdDate(result.date)}</td>
+						<td>{tdSeries(result.series)}</td>
+						<td>{tdSeries(result.route)}</td>
 						<td>{tdTime(result.time)}</td>
-						<td>{tdGap(result.gap)}</td>
-						<td>{tdGap(result.gapPrev)}</td>
 						<td>{valueMax(result.watt, 'w')}</td>
 						<td>{valueMax(result.wattPerKg, 'w/kg')}</td>
 						<td>{valueMax(result.avgHeartRate, 'bpm')}</td>
 						<td>{valueMax(result.weightInGrams, 'kg')}</td>
 						<td>{valueMax(result.heightInCentimeters, 'cm')}</td>
 						<td>{tdPenalty(result.penalty, result._id)}</td>
+						<td>{tdDNF(result.isDisqualification)}</td>
+						<td>{tdDNF(result.isDidNotFinish)}</td>
 					</tr>
 				);
 			})}
