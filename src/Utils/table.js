@@ -17,11 +17,11 @@ export function valueMax(value, dimension) {
 	return value ? data : '';
 }
 
-export function tdRider(name, imageSrc) {
+export function tdRider(name, imageSrc, clsName = 'logo') {
 	const riderLogo = imageSrc ? imageSrc : avatar;
 	return (
 		<div className={cls.rider}>
-			<img className={cls.logo} src={riderLogo} alt="Ph" /> <span>{name}</span>
+			<img className={cls[clsName]} src={riderLogo} alt="Ph" /> <span>{name}</span>
 		</div>
 	);
 }
@@ -91,7 +91,7 @@ export function tdPenalty(penalty, key) {
 
 export function tdDate(date) {
 	if (!date) return <div></div>;
-	let dateArr = new Date(date).toLocaleDateString().split('.');
+	let dateArr = date.split('.');
 	dateArr[2] = dateArr[2]?.slice(2);
 	date = dateArr.join('.');
 	return (

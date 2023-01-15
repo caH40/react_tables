@@ -26,6 +26,10 @@ body {
 	margin: 0 18px;
 }
 
+.main {
+	margin: 3px;
+}
+
 .form {
 	margin: 0 10px;
 	display: flex;

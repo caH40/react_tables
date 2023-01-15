@@ -6,8 +6,9 @@
 }
 .myTable caption {
 	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
+	font-size: 18px;
 	text-align-last: left;
+	margin: 3px 0;
 }
 .myTable thead th {
 	font-family: 'Roboto', sans-serif;
@@ -48,6 +49,13 @@
 .logo {
 	width: 30px;
 	height: 30px;
+	border-radius: 50%;
+	margin-right: 5px;
+	flex-shrink: 0;
+}
+.logoProfile {
+	width: 60px;
+	height: 60px;
 	border-radius: 50%;
 	margin-right: 5px;
 	flex-shrink: 0;

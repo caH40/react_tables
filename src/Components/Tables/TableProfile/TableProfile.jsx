@@ -31,7 +31,7 @@ const TableProfile = ({ zwiftId }) => {
 	return (
 		<div>
 			<table className={cls.myTable}>
-				<caption>{tdRider(profile[0]?.name, photo(profile))}</caption>
+				<caption>{tdRider(profile[0]?.name, photo(profile), 'logoProfile')}</caption>
 				<thead>
 					<tr>
 						{titlesProfile.map(thTitle => {
