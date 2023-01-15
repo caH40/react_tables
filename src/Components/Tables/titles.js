@@ -55,8 +55,9 @@ export const titlesGeneralTour = [
 export const titlesSMPoints = ['#', 'Rider', 'Total', 'St.2', 'St.2', 'St.5', 'St.5'];
 
 export const titlesProfile = [
-	' ',
 	'#',
+	' ',
+	'Pl.',
 	'Date',
 	'Series',
 	'Race',

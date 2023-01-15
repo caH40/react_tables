@@ -20,9 +20,10 @@ const TableBody = ({ profile, category, isLoading }) => {
 					<Spinner isLoading={isLoading} />
 				</td>
 			</tr>
-			{profile.map(result => {
+			{profile.map((result, index) => {
 				return (
 					<tr key={result._id}>
+						<td>{index + 1}</td>
 						<td>{tdCategory(result, category)}</td>
 						<td>{tdPlace(result, category)}</td>
 						<td>{tdDate(result.date)}</td>

@@ -22,7 +22,7 @@
 
 .myTable tbody td {
 	border: none;
-	padding: 3px 4px;
+	padding: 2px 3px;
 	font-size: 14px;
 }
 
@@ -159,5 +159,9 @@
 	cursor: pointer;
 }
 .tdNameStage {
+	font-size: 12px;
+	min-width: 64px;
+}
+.tdDate {
 	font-size: 12px;
 }

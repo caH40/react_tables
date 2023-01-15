@@ -45,7 +45,7 @@ function App() {
 				<Route path="feedback/" element={<Feedback />} />
 				<Route path="teams/" element={<TeamsList />} />
 				<Route path="riders/" element={<RidersList />} />
-				<Route path="profile/:zwiftId" element={<Profile />} />
+				<Route path="profile/:zwiftId/:button" element={<Profile />} />
 			</Routes>
 		</div>
 	);

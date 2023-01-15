@@ -95,7 +95,7 @@ export function tdDate(date) {
 	dateArr[2] = dateArr[2]?.slice(2);
 	date = dateArr.join('.');
 	return (
-		<div className={cls.tdNameStage}>
+		<div className={cls.tdDate}>
 			<span>{date}</span>
 		</div>
 	);
