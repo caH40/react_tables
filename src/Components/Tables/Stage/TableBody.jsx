@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTelegram } from '../../../hooks/useTelegram';
 
 import {
 	tdPlace,
@@ -11,11 +12,14 @@ import {
 	tdPenalty,
 } from '../../../Utils/table';
 import Spinner from '../../UI/Spinner/Spinner';
+import cls from '../Table.module.css';
 
 const TableBody = ({ results, category, isLoading }) => {
+	const { userId = 'none' } = useTelegram();
+
 	const navigate = useNavigate();
 	const toProfile = zwiftId => {
-		navigate(`/profile/${zwiftId}`);
+		navigate(`/profile/${zwiftId}/back`);
 	};
 
 	return (
@@ -26,11 +30,13 @@ const TableBody = ({ results, category, isLoading }) => {
 				</td>
 			</tr>
 			{results.map(result => {
+				const styleNameTr = userId === result.riderId?.telegramId ? 'rgba(255, 115, 0, 0.616)' : '';
 				return (
 					<tr
 						key={result._id}
 						onClick={() => toProfile(result.zwiftRiderId)}
-						style={{ cursor: 'pointer' }}
+						className={cls.trLink}
+						style={{ background: styleNameTr }}
 					>
 						<td>{tdCategory(result, category)}</td>
 						<td>{tdPlace(result, category)}</td>

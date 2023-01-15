@@ -123,6 +123,7 @@
 	font-weight: bold;
 	background: rgb(252, 131, 61);
 }
+
 .A {
 	background: #dc4119;
 }
@@ -158,6 +159,7 @@
 .trLink {
 	cursor: pointer;
 }
+
 .tdNameStage {
 	font-size: 12px;
 	min-width: 64px;
