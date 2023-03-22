@@ -1,28 +1,10 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { useParams } from 'react-router-dom';
 
-import { getResults } from '../../../api/getResults';
 import TableBody from './TableBody';
 import cls from '../Table.module.css';
 import { titlesStage } from '../titles';
-import { useTelegram } from '../../../hooks/useTelegram';
-import { postClick } from '../../../api/clicks';
 
-const TableStage = ({ stageId }) => {
-	const [results, setResults] = useState([]);
-	const [isLoading, setIsLoading] = useState(false);
-
-	const { userId } = useTelegram();
-
-	const category = stageId.slice(0, 1);
-
-	useEffect(() => {
-		getResults(stageId, setIsLoading).then(data => setResults(data));
-		postClick(userId);
-	}, [stageId, userId]);
-
+const TableStage = ({ results, category }) => {
 	return (
 		<div>
 			<table className={cls.myTable}>
@@ -34,7 +16,7 @@ const TableStage = ({ stageId }) => {
 						})}
 					</tr>
 				</thead>
-				<TableBody isLoading={isLoading} category={category} results={results} />
+				<TableBody category={category} results={results} />
 			</table>
 		</div>
 	);

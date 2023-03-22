@@ -6,7 +6,7 @@ import { useTelegram } from '../hooks/useTelegram';
 
 const Profile = () => {
 	const { zwiftId, button } = useParams();
-	console.log({ zwiftId, button });
+
 	const { onClose } = useTelegram();
 
 	const navigate = useNavigate();

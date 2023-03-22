@@ -4,7 +4,6 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './Pages/Home';
 import SettingsNotice from './Pages/SettingsNotice';
-import TableStage from './Components/Tables/Stage/TableStage';
 
 import { useTelegram } from './hooks/useTelegram';
 import Page404 from './Pages/Page404';

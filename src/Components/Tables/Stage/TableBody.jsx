@@ -11,7 +11,7 @@ import {
 	valueMax,
 	tdPenalty,
 } from '../../../Utils/table';
-import Spinner from '../../UI/Spinner/Spinner';
+
 import cls from '../Table.module.css';
 
 const TableBody = ({ results, category, isLoading }) => {
@@ -24,11 +24,6 @@ const TableBody = ({ results, category, isLoading }) => {
 
 	return (
 		<tbody>
-			<tr>
-				<td colSpan={12}>
-					<Spinner isLoading={isLoading} />
-				</td>
-			</tr>
 			{results.map(result => {
 				const styleNameTr = userId === result.riderId?.telegramId ? 'rgba(255, 115, 0, 0.616)' : '';
 				return (
