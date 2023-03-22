@@ -10,18 +10,18 @@ import { titlesStage } from '../titles';
 import { useTelegram } from '../../../hooks/useTelegram';
 import { postClick } from '../../../api/clicks';
 
-const TableStage = () => {
+const TableStage = ({ stageId }) => {
 	const [results, setResults] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
 
 	const { userId } = useTelegram();
-	let { params } = useParams();
-	const category = params.slice(0, 1);
+
+	const category = stageId.slice(0, 1);
 
 	useEffect(() => {
-		getResults(params, setIsLoading).then(data => setResults(data));
+		getResults(stageId, setIsLoading).then(data => setResults(data));
 		postClick(userId);
-	}, [params, userId]);
+	}, [stageId, userId]);
 
 	return (
 		<div>

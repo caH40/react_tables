@@ -27,6 +27,7 @@ const TableStatStages = () => {
 						<th>Route</th>
 						<th>Riders</th>
 						<th>Best</th>
+						<th>Leader</th>
 					</tr>
 				</thead>
 				<TableBody isLoading={isLoading} results={results} />
